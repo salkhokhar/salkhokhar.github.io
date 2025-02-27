@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sahil Khokhar - Portfolio</title>
+  <style>
+    /* Basic styling for the tab container */
+    .tab-container {
+      width: 80%;
+      margin: 0 auto;
+    }
+
+    /* Style the tab buttons */
+    .tab-buttons {
+      overflow: hidden;
+      background-color: #f1f1f1;
+    }
+    .tab-buttons button {
+      background-color: inherit;
+      float: left;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      padding: 14px 16px;
+      transition: 0.3s;
+      font-size: 17px;
+    }
+    .tab-buttons button:hover {
+      background-color: #ddd;
+    }
+    .tab-buttons button.active {
+      background-color: #ccc;
+    }
+
+    /* Style the tab content */
+    .tab-content {
+      display: none;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-top: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="tab-container">
+    <h1>Sahil Khokhar (SAL)</h1>
+    <p>
+      <strong>Contact:</strong> <a href="mailto:khokhar.sahil0809@gmail.com">khokhar.sahil0809@gmail.com</a> |
+      <strong>GitHub:</strong> <a href="https://github.com/salkhokhar">github.com/salkhokhar</a> |
+      <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/salkhokhar/">LinkedIn Profile</a>
+    </p>
+
+    <div class="tab-buttons">
+      <button class="tab-link active" onclick="openTab(event, 'About')">About Me</button>
+      <button class="tab-link" onclick="openTab(event, 'Experience')">Experience</button>
+      <button class="tab-link" onclick="openTab(event, 'Education')">Education</button>
+      <button class="tab-link" onclick="openTab(event, 'Publications')">Publications</button>
+      <button class="tab-link" onclick="openTab(event, 'Projects')">Projects</button>
+      <button class="tab-link" onclick="openTab(event, 'Volunteering')">Volunteering</button>
+    </div>
+
+    <div id="About" class="tab-content" style="display: block;">
+      <h2>About Me</h2>
+      <p>
+        I am a Software Developer with a diverse background in building robust software solutions across various domains. While my experience spans full-stack development and data analysis, my greatest proficiency lies in Applied Artificial Intelligence, Data Science, NLP, and Computer Vision. I love crafting innovative solutions—whether that’s real-time object detection using advanced YOLO frameworks or developing NLP systems for research paper classification—while leveraging solid software engineering principles.
+      </p>
+      <h3>Tools & Technical Proficiencies</h3>
+      <ul>
+        <li><strong>Project Management:</strong> Atlassian Jira</li>
+        <li><strong>MS Suite:</strong> Excel, Word, PowerPoint</li>
+        <li><strong>IDE:</strong> VS Code, JupyterLab</li>
+        <li><strong>Source Control:</strong> Git</li>
+        <li><strong>Programming Languages:</strong> Python, C, SQL, HTML, MATLAB</li>
+        <li><strong>Machine Learning:</strong> Computer Vision, Data Science, Audio & Image Classification, Object Detection, NLP</li>
+        <li><strong>Python Libraries:</strong> PyTorch, TensorFlow, Matplotlib, Sklearn, Pandas, Numpy</li>
+      </ul>
+      <p><strong>Languages:</strong> English (Proficient, CEFR, June 2023)</p>
+    </div>
+
+    <div id="Experience" class="tab-content">
+      <h2>Experience</h2>
+      <h3>Guru Jambheshwar University of Science and Technology, India</h3>
+      <p><em>Software Developer & Engineer – Electronics and Communications Engineering (Nov. 2018 – Aug. 2024)</em></p>
+      <ul>
+        <li>Executed innovative AI research by identifying key research questions, designing experiments, and advancing computer vision models.</li>
+        <li>Managed data preprocessing and analysis using Python to prepare datasets for model development.</li>
+        <li>Developed machine learning models using TensorFlow and PyTorch; implemented various versions of YOLO for real-time object detection.</li>
+        <li>Published and presented research findings in journals and conferences.</li>
+      </ul>
+      <h3>Delhi Global Institute of Technology, India</h3>
+      <p><em>Technical Instructor & Developer – Electronics and Communications Engineering (Jan. 2022 – Aug. 2024)</em></p>
+      <ul>
+        <li>Increased student engagement in digital electronics, Python, and microprocessor courses through interactive teaching and lab sessions.</li>
+        <li>Improved student performance by providing personalized feedback and learning suggestions.</li>
+      </ul>
+      <h3>Sanskaram Public School, India</h3>
+      <p><em>PGT Physics (Nov. 2020 – Nov. 2021)</em></p>
+      <ul>
+        <li>Developed engaging lesson plans and conducted experiments to boost student interest in physics.</li>
+        <li>Ensured exam integrity by proctoring school exams.</li>
+      </ul>
+    </div>
+
+    <div id="Education" class="tab-content">
+      <h2>Education</h2>
+      <ul>
+        <li><strong>Master of Engineer (M.Engg) in Electrical and Computer Engineering (Applied Artificial Intelligence)</strong>  
+            University of Ottawa, Ontario *(Expected Graduation: 04/26)*</li>
+        <li><strong>Master of Technology (M.Tech) in Electronics and Communication Engineering</strong>  
+            Deenbandhu Chhotu Ram University of Science and Technology, India *(First Division with Honors)*</li>
+        <li><strong>Bachelor of Technology (B.Tech) in Electronics and Communication Engineering</strong>  
+            Maharshi Dayanand University, India *(First Division)*</li>
+      </ul>
+    </div>
+
+    <div id="Publications" class="tab-content">
+      <h2>Published Research</h2>
+      <ol>
+        <li>
+          <strong>Integrating YOLOv8 and CSPBottleneck based CNN for Enhanced License Plate Character Recognition</strong>  
+          *Journal of Real-Time Image Processing, Sep. 2024*  
+          [DOI](https://doi.org/10.1007/s11554-02401537-2)
+        </li>
+        <li>
+          <strong>Improving License Plate Detection with YOLO-LPD Algorithm</strong>  
+          *International Journal of Computational Vision and Robotics*  
+          [DOI](http://dx.doi.org/10.1504/IJCVR.2024.10066190)
+        </li>
+        <li>
+          <strong>Enhanced Licence Plate Detection Using YOLO Framework in Challenging Environments</strong>  
+          *International Journal of Computational Vision and Robotics*  
+          [DOI](http://dx.doi.org/10.1504/IJCVR.2024.10062468)
+        </li>
+        <li>
+          <strong>Character Recognition for ALPR Systems: A New Perspective</strong>  
+          *Innovations in Electronics and Communication Engineering, April 2020*  
+          [DOI](https://doi.org/10.1007/978-981-15-3172-9_46)
+        </li>
+        <li>
+          <strong>License Plate Detection Techniques: Conventional Methods to Deep Learning</strong>  
+          *ICT with Intelligent Applications. Smart Innovation, Oct. 2022*  
+          [DOI](https://doi.org/10.1007/978-981-19-3571-8_66)
+        </li>
+      </ol>
+    </div>
+
+    <div id="Projects" class="tab-content">
+      <h2>Academic Projects</h2>
+      <ul>
+        <li>
+          <strong>Sentiment Analysis from Audio Samples:</strong>  
+          Developed a pipeline to analyze audio signals for sentiment classification using features like pitch, tone, amplitude, and spectrogram representations. Implemented models (Random Forest, SVM, KNN) and addressed fairness by developing gender-specific models.
+        </li>
+        <li>
+          <strong>Research Paper Classification Using NLP:</strong>  
+          Designed an NLP system to classify research papers into predefined categories based on their abstracts. Applied techniques such as Bag-of-Words, TF-IDF, n-gram vectorization, and BERT embeddings.
+        </li>
+        <li>
+          <strong>SVM-Based Character Recognition for ALPR Systems:</strong>  
+          Developed an ALPR system in MATLAB leveraging an SVM with an RBF kernel to recognize license plate characters by extracting an 85-dimensional feature set.
+        </li>
+        <li>
+          <strong>Wireless Sensor Network for Agricultural Lands:</strong>  
+          Designed a sensor network using Arduino and environmental sensors to monitor agricultural lands for optimized crop management.
+        </li>
+        <li>
+          <strong>Separation of Silver and Silicon from Solar Panels using Electrostatic Separation:</strong>  
+          Developed an eco-friendly, energy-efficient system with a voltage multiplier circuit to extract silver and silicon from discarded solar panels.
+        </li>
+        <li>
+          <strong>Autonomous Avoidance Detection Vehicle:</strong>  
+          Built an Arduino-based autonomous vehicle with proximity sensors for real-time obstacle detection and navigation.
+        </li>
+      </ul>
+    </div>
+
+    <div id="Volunteering" class="tab-content">
+      <h2>Volunteering</h2>
+      <ul>
+        <li>
+          <strong>Faculty of Engineering, uOttawa:</strong>  
+          Assisted in organizing and guiding prospective students during the Engineering Open House.
+        </li>
+        <li>
+          <strong>Center for Entrepreneurship and Engineering Design (CEED), uOttawa:</strong>  
+          Supported hands-on prototyping projects using makerspace tools and promoted CEED programs and workshops.
+        </li>
+      </ul>
+    </div>
+
+    <div id="Extracurricular" class="tab-content">
+      <h2>Extracurricular Activities</h2>
+      <ul>
+        <li>English Debate Society</li>
+        <li>Improv Club</li>
+        <li>Baja Off-Road Racing – Electrical Team</li>
+        <li>NanoBrew Team</li>
+      </ul>
+    </div>
+
+    <div id="Contact" class="tab-content">
+      <h2>Contact</h2>
+      <p>
+        Feel free to reach out via email at <a href="mailto:khokhar.sahil0809@gmail.com">khokhar.sahil0809@gmail.com</a> or connect with me on 
+        <a href="https://github.com/salkhokhar">GitHub</a> and 
+        <a href="https://www.linkedin.com/in/salkhokhar/">LinkedIn</a>.
+      </p>
+    </div>
+  </div>
+
+  <script>
+    function openTab(evt, tabName) {
+      var i, tabcontent, tablinks;
+      // Hide all tab contents
+      tabcontent = document.getElementsByClassName("tab-content");
+      for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+      }
+      // Remove the "active" class from all tab buttons
+      tablinks = document.getElementsByClassName("tab-link");
+      for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+      }
+      // Show the current tab, and add an "active" class to the button that opened the tab
+      document.getElementById(tabName).style.display = "block";
+      evt.currentTarget.className += " active";
+    }
+  </script>
+</body>
+</html>
