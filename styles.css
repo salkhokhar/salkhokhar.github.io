@@ -1,85 +1,88 @@
 /* Global Styles */
 body {
   margin: 0;
-  padding: 0;
   font-family: 'Roboto', sans-serif;
   background: #f4f7f6;
   color: #333;
+  scroll-behavior: smooth; /* Enables smooth scrolling */
 }
 .container {
-  max-width: 1000px;
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 20px;
-}
-a {
-  color: #0077cc;
-  text-decoration: none;
-}
-a:hover {
-  text-decoration: underline;
+  padding: 0 20px;
 }
 
 /* Header Styles */
-header {
-  text-align: center;
-  margin-bottom: 20px;
+.site-header {
+  background: #fff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+}
+.site-header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 0;
+}
+.header-branding {
+  display: flex;
+  align-items: center;
+  gap: 15px;
 }
 .profile-pic {
-  width: 150px;
-  height: 150px;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
+  border: 2px solid #0077cc;
   object-fit: cover;
-  border: 4px solid #0077cc;
-  margin-bottom: 15px;
+}
+.site-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+}
+.site-nav a {
+  color: #0077cc;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+.site-nav a:hover {
+  color: #005fa3;
 }
 
-/* Tab Container */
-.tab-container {
+/* Main content styles */
+.site-content {
+  padding-top: 100px; /* Account for fixed header */
+  padding-bottom: 50px;
+}
+.content-section {
   background: #fff;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  margin-bottom: 30px;
+  padding: 30px;
   border-radius: 8px;
-  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
-.tab-buttons {
-  display: flex;
-  background: #0077cc;
+
+/* Footer Styles */
+.site-footer {
+  text-align: center;
+  padding: 20px 0;
+  background: #fff;
+  color: #666;
+  font-size: 14px;
 }
-.tab-buttons button {
-  flex: 1;
-  background: transparent;
-  border: none;
-  outline: none;
-  padding: 14px;
-  cursor: pointer;
-  color: #fff;
-  font-size: 16px;
-  transition: background 0.3s;
-}
-.tab-buttons button:hover {
-  background: rgba(255, 255, 255, 0.2);
-}
-.tab-buttons button.active {
-  background: #005fa3;
-  font-weight: bold;
-}
-.tab-content {
-  display: none;
-  padding: 20px;
-  animation: fadeIn 0.3s;
-}
-.tab-content.active {
-  display: block;
+
+/* Example of simple fade in animation for sections */
+.content-section {
+  animation: fadeIn 0.5s ease-in;
 }
 @keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-/* Footer */
-footer {
-  text-align: center;
-  padding: 10px;
-  font-size: 14px;
-  color: #666;
-  margin-top: 20px;
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
