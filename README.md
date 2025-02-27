@@ -9,8 +9,7 @@
 
 ## About Me
 
-I am a Developer with a diverse background in building robust software solutions across various domains. While my experience spans full-stack development and data analysis, my greatest proficiency lies in Applied Artificial Intelligence, Data Sience, NLP and Computer Vision. I love crafting innovative solutions—whether that’s real-time object detection using advanced YOLO frameworks or developing NLP systems for research paper classification—while leveraging solid software engineering principles.
-
+I am a Software Developer with a diverse background in building robust software solutions across various domains. While my experience spans full-stack development and data analysis, my greatest proficiency lies in Applied Artificial Intelligence, Data Science, NLP and Computer Vision. I love crafting innovative solutions—whether that’s real-time object detection using advanced YOLO frameworks or developing NLP systems for research paper classification—while leveraging solid software engineering principles.
 
 ---
 
@@ -37,18 +36,19 @@ I am a Developer with a diverse background in building robust software solutions
 
 ---
 
-## Experience
+<details>
+  <summary><strong>Experience</strong></summary>
 
 ### Guru Jambheshwar University of Science and Technology, India
-**Research Scholar** – Electronics and Communications Engineering  
+**Software Developer & Engineer** – Electronics and Communications Engineering  
 *Nov. 2018 – Aug. 2024*  
 - Executed innovative AI research by identifying key research questions, designing experiments, and advancing computer vision models.
 - Managed data preprocessing and analysis using Python to prepare datasets for model development.
-- Developed machine learning models using TensorFlow and PyTorch; implemented various YOLO versions for real-time object detection.
+- Developed machine learning models using TensorFlow and PyTorch; implemented various versions of YOLO for real-time object detection.
 - Published and presented research findings in journals and conferences.
 
 ### Delhi Global Institute of Technology, India
-**Assistant Professor** – Electronics and Communications Engineering  
+**Technical Instructor & Developer** – Electronics and Communications Engineering  
 *Jan. 2022 – Aug. 2024*  
 - Increased student engagement in digital electronics, Python, and microprocessor courses through interactive teaching and lab sessions.
 - Improved student performance by providing personalized feedback and learning suggestions.
@@ -58,23 +58,23 @@ I am a Developer with a diverse background in building robust software solutions
 *Nov. 2020 – Nov. 2021*  
 - Developed engaging lesson plans and conducted experiments to boost student interest in physics.
 - Ensured exam integrity by proctoring school exams.
+</details>
 
----
-
-## Education
+<details>
+  <summary><strong>Education</strong></summary>
 
 - **Master of Engineer (M.Engg) in Electrical and Computer Engineering (Applied Artificial Intelligence)**  
   University of Ottawa, Ontario *(Expected Graduation: 04/26)*
-  
+
 - **Master of Technology (M.Tech) in Electronics and Communication Engineering**  
   Deenbandhu Chhotu Ram University of Science and Technology, India *(First Division with Honors)*
 
 - **Bachelor of Technology (B.Tech) in Electronics and Communication Engineering**  
   Maharshi Dayanand University, India *(First Division)*
+</details>
 
----
-
-## Published Research
+<details>
+  <summary><strong>Published Research</strong></summary>
 
 1. **Integrating YOLOv8 and CSPBottleneck based CNN for Enhanced License Plate Character Recognition**  
    *Journal of Real-Time Image Processing, Sep. 2024*  
@@ -91,10 +91,10 @@ I am a Developer with a diverse background in building robust software solutions
 5. **License Plate Detection Techniques: Conventional Methods to Deep Learning**  
    *ICT with Intelligent Applications. Smart Innovation, Oct. 2022*  
    [DOI](https://doi.org/10.1007/978-981-19-3571-8_66)
+</details>
 
----
-
-## Academic Projects
+<details>
+  <summary><strong>Academic Projects</strong></summary>
 
 - **Sentiment Analysis from Audio Samples:**  
   Developed a pipeline to analyze audio signals for sentiment classification using features like pitch, tone, amplitude, and spectrogram representations. Implemented models (Random Forest, SVM, KNN) and addressed fairness by developing gender-specific models.
@@ -103,7 +103,7 @@ I am a Developer with a diverse background in building robust software solutions
   Designed an NLP system to classify research papers into predefined categories based on their abstracts. Applied techniques such as Bag-of-Words, TF-IDF, n-gram vectorization, and BERT embeddings.
 
 - **SVM-Based Character Recognition for ALPR Systems:**  
-  Developed an ALPR system in MATLAB leveraging an SVM with RBF kernel to recognize license plate characters by extracting an 85-dimensional feature set.
+  Developed an ALPR system in MATLAB leveraging an SVM with an RBF kernel to recognize license plate characters by extracting an 85-dimensional feature set.
 
 - **Wireless Sensor Network for Agricultural Lands:**  
   Designed a sensor network using Arduino and environmental sensors to monitor agricultural lands for optimized crop management.
@@ -113,31 +113,32 @@ I am a Developer with a diverse background in building robust software solutions
 
 - **Autonomous Avoidance Detection Vehicle:**  
   Built an Arduino-based autonomous vehicle with proximity sensors for real-time obstacle detection and navigation.
+</details>
 
----
-
-## Volunteering
+<details>
+  <summary><strong>Volunteering</strong></summary>
 
 - **Faculty of Engineering, uOttawa:**  
   Assisted in organizing and guiding prospective students during the Engineering Open House.
   
 - **Center for Entrepreneurship and Engineering Design (CEED), uOttawa:**  
   Supported hands-on prototyping projects using makerspace tools and promoted CEED programs and workshops.
+</details>
 
----
+<details>
+  <summary><strong>Extracurricular Activities</strong></summary>
 
-## Extracurricular Activities
-
-- English Debate Society
-- Improv Club
-- Baja Off-Road Racing – Electrical Team
+- English Debate Society  
+- Improv Club  
+- Baja Off-Road Racing – Electrical Team  
 - NanoBrew Team
+</details>
 
----
-
-## Contact
+<details>
+  <summary><strong>Contact</strong></summary>
 
 Feel free to reach out via email at [khokhar.sahil0809@gmail.com](mailto:khokhar.sahil0809@gmail.com) or connect with me on [GitHub](https://github.com/salkhokhar) and [LinkedIn](https://www.linkedin.com/in/salkhokhar/).
+</details>
 
 ---
 
