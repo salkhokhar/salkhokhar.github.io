@@ -6,9 +6,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet">
-  
   <style>
-    /* Global Styles */
+    /* Base Reset & Typography */
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
     body {
       margin: 0;
       font-family: 'Roboto', sans-serif;
@@ -16,116 +18,195 @@
       color: #333;
       scroll-behavior: smooth;
     }
+    a { 
+      text-decoration: none;
+      color: inherit;
+    }
     .container {
+      width: 90%;
       max-width: 1200px;
       margin: 0 auto;
-      padding: 0 20px;
     }
-
-    /* Header Styles */
-    .site-header {
-      background: #fff;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    
+    /* Header */
+    header {
       position: fixed;
-      width: 100%;
       top: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(255,255,255,0.95);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
       z-index: 1000;
+      backdrop-filter: blur(5px);
     }
-    .site-header .container {
+    .header-inner {
       display: flex;
-      align-items: center;
       justify-content: space-between;
-      padding: 15px 0;
+      align-items: center;
+      padding: 15px 20px;
     }
-    .header-branding {
+    .logo {
       display: flex;
       align-items: center;
-      gap: 15px;
+      gap: 10px;
     }
-    .profile-pic {
+    .logo img {
       width: 50px;
       height: 50px;
       border-radius: 50%;
-      border: 2px solid #0077cc;
       object-fit: cover;
+      border: 2px solid #0077cc;
     }
-    .site-nav ul {
-      list-style: none;
+    .logo h1 {
+      font-size: 24px;
+      color: #0077cc;
+      margin: 0;
+    }
+    nav ul {
       display: flex;
       gap: 20px;
+      list-style: none;
       margin: 0;
       padding: 0;
     }
-    .site-nav a {
-      color: #0077cc;
-      text-decoration: none;
+    nav li {
       font-weight: 500;
+    }
+    nav a {
+      color: #0077cc;
       transition: color 0.3s;
     }
-    .site-nav a:hover {
+    nav a:hover {
       color: #005fa3;
     }
-    /* Hamburger for Mobile */
+    /* Mobile Navigation */
     .hamburger {
       display: none;
-      font-size: 24px;
+      font-size: 28px;
       cursor: pointer;
     }
     @media (max-width: 767px) {
-      .site-nav ul {
-        display: none;
+      .hamburger {
+        display: block;
+      }
+      nav ul {
         flex-direction: column;
         background: #fff;
         position: absolute;
         top: 60px;
         right: 20px;
         box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        display: none;
       }
-      .site-nav.active ul {
+      nav.active ul {
         display: flex;
       }
-      .hamburger {
-        display: block;
-      }
     }
-
-    /* Main Content */
-    .site-content {
-      padding-top: 100px; /* to offset fixed header */
-      padding-bottom: 50px;
+    
+    /* Sections */
+    section {
+      position: relative;
+      padding: 120px 20px 60px;
     }
-    .content-section {
+    /* Section Backgrounds (Parallax-like) */
+    section::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-size: cover;
+      background-position: center;
+      opacity: 0.2;
+      z-index: -1;
+    }
+    #about::before {
+      background-image: url('asset/about-bg.jpg');
+    }
+    #experience::before {
+      background-image: url('asset/experience-bg.jpg');
+    }
+    #education::before {
+      background-image: url('asset/education-bg.jpg');
+    }
+    #publications::before {
+      background-image: url('asset/publications-bg.jpg');
+    }
+    #projects::before {
+      background-image: url('asset/projects-bg.jpg');
+    }
+    #volunteering::before {
+      background-image: url('asset/volunteering-bg.jpg');
+    }
+    #extracurricular::before {
+      background-image: url('asset/extracurricular-bg.jpg');
+    }
+    #contact::before {
+      background-image: url('asset/contact-bg.jpg');
+    }
+    
+    /* Content Card */
+    .content-card {
       background: #fff;
-      margin: 30px auto;
       padding: 30px;
       border-radius: 8px;
       box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-      animation: fadeIn 0.5s ease-in;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .content-card h2 {
+      margin-bottom: 15px;
+      color: #0077cc;
+    }
+    .content-card p {
+      margin-bottom: 15px;
+    }
+    
+    /* Footer */
+    footer {
+      background: #fff;
+      text-align: center;
+      padding: 20px 0;
+      font-size: 14px;
+      color: #666;
+    }
+    
+    /* Spacing for Fixed Header */
+    main {
+      padding-top: 100px;
+    }
+    
+    /* Animation */
+    .content-card {
+      animation: fadeIn 0.6s ease-out;
     }
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(20px); }
       to { opacity: 1; transform: translateY(0); }
     }
-
-    /* Footer */
-    .site-footer {
-      text-align: center;
-      padding: 20px 0;
-      background: #fff;
-      color: #666;
-      font-size: 14px;
+    
+    /* Responsive Adjustments */
+    @media (max-width: 767px) {
+      .header-inner {
+        flex-direction: column;
+        gap: 10px;
+      }
+      nav ul {
+        width: 200px;
+      }
+      section {
+        padding: 100px 10px 40px;
+      }
     }
   </style>
 </head>
 <body>
-  <!-- Header with Navigation -->
-  <header class="site-header">
-    <div class="container">
-      <div class="header-branding">
-        <img src="asset/headshot.png" alt="Sahil Khokhar" class="profile-pic">
+  <!-- Fixed Header -->
+  <header>
+    <div class="header-inner container">
+      <div class="logo">
+        <img src="asset/headshot.png" alt="Sahil Khokhar">
         <h1>Sahil Khokhar (SAL)</h1>
       </div>
-      <nav class="site-nav" id="siteNav">
+      <nav id="siteNav">
         <ul>
           <li><a href="#about">About Me</a></li>
           <li><a href="#experience">Experience</a></li>
@@ -140,62 +221,83 @@
       <div class="hamburger" id="hamburger">&#9776;</div>
     </div>
   </header>
-
+  
   <!-- Main Content -->
-  <main class="site-content container">
-    <section id="about" class="content-section">
-      <h2>About Me</h2>
-      <p>I am a Software Developer with a passion for creating innovative solutions. I specialize in full-stack development and enjoy building robust applications that solve real-world problems.</p>
+  <main class="container">
+    <section id="about">
+      <div class="content-card">
+        <h2>About Me</h2>
+        <p>I am a Software Developer with a diverse background in building robust solutions. I specialize in full-stack development, data analysis, and artificial intelligence. I love solving complex problems with innovative code.</p>
+      </div>
     </section>
-
-    <section id="experience" class="content-section">
-      <h2>Experience</h2>
-      <p>Details about my professional experience go here.</p>
+    
+    <section id="experience">
+      <div class="content-card">
+        <h2>Experience</h2>
+        <p>Details about my professional experience, projects, and roles.</p>
+      </div>
     </section>
-
-    <section id="education" class="content-section">
-      <h2>Education</h2>
-      <p>Details about my education background.</p>
+    
+    <section id="education">
+      <div class="content-card">
+        <h2>Education</h2>
+        <p>Information on my academic background and certifications.</p>
+      </div>
     </section>
-
-    <section id="publications" class="content-section">
-      <h2>Publications</h2>
-      <p>List of research papers or articles I have published.</p>
+    
+    <section id="publications">
+      <div class="content-card">
+        <h2>Publications</h2>
+        <p>A list of my published research, articles, and papers.</p>
+      </div>
     </section>
-
-    <section id="projects" class="content-section">
-      <h2>Projects</h2>
-      <p>Here are some of the projects I’m most proud of. You can click on each to view more details.</p>
+    
+    <section id="projects">
+      <div class="content-card">
+        <h2>Projects</h2>
+        <p>Some of the projects I have worked on. Click on a project to see more details.</p>
+      </div>
     </section>
-
-    <section id="volunteering" class="content-section">
-      <h2>Volunteering</h2>
-      <p>My volunteering experiences and contributions.</p>
+    
+    <section id="volunteering">
+      <div class="content-card">
+        <h2>Volunteering</h2>
+        <p>My volunteering work and community engagements.</p>
+      </div>
     </section>
-
-    <section id="extracurricular" class="content-section">
-      <h2>Extracurricular</h2>
-      <p>Activities and interests outside of work and study.</p>
+    
+    <section id="extracurricular">
+      <div class="content-card">
+        <h2>Extracurricular</h2>
+        <p>Activities and interests outside of work.</p>
+      </div>
     </section>
-
-    <section id="contact" class="content-section">
-      <h2>Contact</h2>
-      <p>Feel free to reach out via email at <a href="mailto:khokhar.sahil0809@gmail.com">khokhar.sahil0809@gmail.com</a> or connect on social media.</p>
+    
+    <section id="contact">
+      <div class="content-card">
+        <h2>Contact</h2>
+        <p>Feel free to reach out: <a href="mailto:khokhar.sahil0809@gmail.com">khokhar.sahil0809@gmail.com</a></p>
+        <p>
+          Connect with me on 
+          <a href="https://github.com/salkhokhar" target="_blank">GitHub</a> | 
+          <a href="https://www.linkedin.com/in/salkhokhar/" target="_blank">LinkedIn</a>
+        </p>
+      </div>
     </section>
   </main>
-
+  
   <!-- Footer -->
-  <footer class="site-footer">
+  <footer>
     <div class="container">
       <p>&copy; 2025 Sahil Khokhar</p>
     </div>
   </footer>
-
-  <!-- JavaScript for Mobile Menu Toggle -->
+  
+  <!-- JavaScript for Mobile Menu -->
   <script>
     const hamburger = document.getElementById('hamburger');
     const siteNav = document.getElementById('siteNav');
-    hamburger.addEventListener('click', function() {
+    hamburger.addEventListener('click', () => {
       siteNav.classList.toggle('active');
     });
   </script>
