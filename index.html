@@ -1,247 +1,298 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Sahil Khokhar - Portfolio</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet">
-  <!-- Link to external CSS file -->
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>Sahil Khokhar (Sal) - Resume</title>
+  <!-- Link to the external CSS file -->
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <!-- Fixed Header -->
-  <header>
-    <div class="header-inner container">
-      <div class="logo">
-        <img src="asset/headshot.png" alt="Sahil Khokhar">
-        <h1>Sahil Khokhar (SAL)</h1>
-      </div>
-      <nav id="siteNav">
-        <ul>
-          <li><a href="#about">About</a></li>
-          <li><a href="#experience">Experience</a></li>
-          <li><a href="#education">Education</a></li>
-          <li><a href="#publications">Publications</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#volunteering">Volunteering</a></li>
-          <li><a href="#extracurricular">Extra-Curricular</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
-      <div class="hamburger" id="hamburger">&#9776;</div>
+
+  <!-- Header: Name & Contact Info -->
+  <header class="main-header">
+    <div class="container">
+      <h1>Sahil Khokhar (Sal)</h1>
+      <p>
+        <a href="mailto:khokhar.sahil0809@gmail.com">khokhar.sahil0809@gmail.com</a> | 
+        <a href="https://github.com/salkhokhar" target="_blank">GitHub: github.com/salkhokhar</a> | 
+        <a href="https://www.linkedin.com/in/salkhokhar" target="_blank">LinkedIn</a>
+      </p>
     </div>
   </header>
-  
-  <!-- Main Content -->
-  <main class="container">
-    <!-- About Section -->
-    <section id="about">
-      <div class="content-card">
-        <h2>About Me</h2>
-        <p>
-          I'm Sahil Khokhar (SAL), a Software Developer with a diverse background in building robust software solutions. I specialize in full-stack development, data analysis, and artificial intelligence. Passionate about solving complex problems, I leverage my expertise in computer vision, machine learning, and natural language processing to create innovative applications.
-        </p>
-        <p>
-          <strong>E-mail:</strong> <a href="mailto:khokhar.sahil0809@gmail.com">khokhar.sahil0809@gmail.com</a><br>
-          <strong>Github:</strong> <a href="https://github.com/salkhokhar" target="_blank">github.com/salkhokhar</a> | 
-          <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/salkhokhar/" target="_blank">linkedin.com/in/salkhokhar/</a>
-        </p>
-        <h3>Tools & Technical Proficiencies</h3>
-        <p>
-          <strong>Project Management:</strong> Atlassian Jira<br>
-          <strong>MS Suite:</strong> Excel, Word, PowerPoint<br>
-          <strong>IDE:</strong> VS Code, JupyterLab<br>
-          <strong>SCM:</strong> Git<br>
-          <strong>Programming:</strong> Python, C, SQL, HTML, MATLAB<br>
-          <strong>Machine Learning:</strong> Computer Vision, Data Science, Audio Classification, Image Classification, Object Detection, Natural Language Processing<br>
-          <strong>Python Libraries:</strong> PyTorch, Tensorflow, Matplotlib, Sklearn, Pandas, Numpy
-        </p>
-        <p><strong>Languages:</strong> English (CEFR Proficient, June 2023)</p>
+
+  <!-- Tools & Technical Proficiencies -->
+  <section id="tools">
+    <div class="container">
+      <h2>Tools & Technical Proficiencies</h2>
+      <p>PM: Atlassian Jira | MS Suite: Excel, Word, PowerPoint | IDE: VS Code, JupyterLab | SCM: Git</p>
+      <p>Programming: Python, C, SQL, HTML, MATLAB</p>
+      <p>Machine Learning: Computer Vision, Data Science, Audio Classification, Image Classification, Object Detection, 
+         Natural Language Processing</p>
+      <p>Python Libraries: PyTorch, TensorFlow, Matplotlib, Sklearn, Pandas, Numpy</p>
+      <p>Languages: English, CEFR “PROFICIENT” (June 2023)</p>
+    </div>
+  </section>
+
+  <!-- Skills Section (inspired by your reference screenshot) -->
+  <section id="skills">
+    <div class="container">
+      <h2>Skills</h2>
+      <div class="skills-cards">
+        
+        <!-- Skill Card 1 -->
+        <div class="skill-card">
+          <div class="skill-icon">
+            <!-- Replace with your own icon or remove the <img> if not needed -->
+            <img src="asset/backend-icon.svg" alt="Backend Icon" />
+          </div>
+          <h3>Back-end Developer</h3>
+          <p>
+            Develop business logic and back-end systems to support the product, 
+            create APIs, handle server architecture, and manage version control systems.
+          </p>
+          <h4>Languages:</h4>
+          <p>PHP, Python, Ruby, Java, Perl</p>
+          <h4>Tools:</h4>
+          <p>Docker, Jenkins, AWS, etc.</p>
+        </div>
+
+        <!-- Skill Card 2 -->
+        <div class="skill-card">
+          <div class="skill-icon">
+            <img src="asset/frontend-icon.svg" alt="Frontend Icon" />
+          </div>
+          <h3>Front-end Developer</h3>
+          <p>
+            I code things from scratch and gracefully bring ideas to life in the browser, 
+            paying attention to the product vision.
+          </p>
+          <h4>Technologies Stack:</h4>
+          <p>HTML, JavaScript, Slim, CSS, Pug</p>
+          <h4>My Tools:</h4>
+          <p>React, Angular, SASS, etc.</p>
+        </div>
+
+        <!-- Skill Card 3 -->
+        <div class="skill-card">
+          <div class="skill-icon">
+            <img src="asset/designer-icon.svg" alt="Designer Icon" />
+          </div>
+          <h3>Designer</h3>
+          <p>
+            I create both easy and simple as well as more complex and detailed prototypes. 
+            Simplicity, usefulness, and effectiveness are my main focus.
+          </p>
+          <h4>Things I Do:</h4>
+          <p>UI, UX, Web, Mobile, Apps, Logos</p>
+        </div>
+
       </div>
-    </section>
-    
-    <!-- Experience Section -->
-    <section id="experience">
-      <div class="content-card">
-        <h2>Experience</h2>
-        <h3>Guru Jambheshwar University of Science and Technology, India</h3>
-        <p><em>Research Scholar, Electronics and Communications Engineering</em> (Nov. 2018 – Aug. 2024)</p>
+    </div>
+  </section>
+
+  <!-- Experience Section -->
+  <section id="experience">
+    <div class="container">
+      <h2>Experience</h2>
+      
+      <!-- Job 1 -->
+      <div class="job">
+        <h3>Research Scholar, Guru Jambheshwar University of Science and Technology, India</h3>
+        <p><strong>Department:</strong> Electronics and Communications Engineering</p>
+        <p><strong>Dates:</strong> Nov. 2018 - Aug. 2024</p>
         <ul>
-          <li>Executed innovative AI research by identifying research questions, designing experiments, and advancing AI‐based Computer Vision models.</li>
+          <li>Executed innovative AI research by identifying research questions, designing experiments, and advancing AI-based Computer Vision models.</li>
           <li>Managed data preprocessing and analysis using Python to prepare datasets for model development and validation.</li>
-          <li>Developed machine learning models using TensorFlow and PyTorch, refining them through performance evaluation metrics.</li>
-          <li>Implemented various versions of YOLO for real-time object detection in images and videos, optimizing detection accuracy and speed.</li>
+          <li>Developed machine learning models in TensorFlow and PyTorch, refining them through performance evaluation metrics.</li>
+          <li>Implemented various versions of YOLO for real-time object detection, optimizing detection accuracy and speed.</li>
           <li>Published and presented research findings in journals and conferences.</li>
         </ul>
-        
-        <h3>Delhi Global Institute of Technology, India</h3>
-        <p><em>Assistant Professor, Electronics and Communications Engineering</em> (Jan. 2022 – Aug. 2024)</p>
+      </div>
+
+      <!-- Job 2 -->
+      <div class="job">
+        <h3>Assistant Professor, Delhi Global Institute of Technology, India</h3>
+        <p><strong>Department:</strong> Electronics and Communications Engineering</p>
+        <p><strong>Dates:</strong> Jan. 2022 - Aug. 2024</p>
         <ul>
           <li>Increased student engagement in digital electronics, Python, and microprocessor courses through interactive teaching techniques and lab sessions.</li>
-          <li>Monitored student progress, provided feedback, and offered personalized learning suggestions to improve academic performance.</li>
-        </ul>
-        
-        <h3>Sanskaram Public School, India</h3>
-        <p><em>PGT Physics</em> (Nov. 2020 – Nov. 2021)</p>
-        <ul>
-          <li>Enhanced student interest in physics through engaging lesson plans and hands-on experiments.</li>
-          <li>Proctored school exams, ensuring integrity and compliance with examination protocols.</li>
+          <li>Improved student performance by monitoring progress, providing feedback, and offering personalized learning suggestions.</li>
         </ul>
       </div>
-    </section>
-    
-    <!-- Education Section -->
-    <section id="education">
-      <div class="content-card">
-        <h2>Education</h2>
+
+      <!-- Job 3 -->
+      <div class="job">
+        <h3>PGT Physics, Sanskaram Public School, India</h3>
+        <p><strong>Dates:</strong> Nov. 2020 - Nov. 2021</p>
         <ul>
-          <li>
-            <strong>Master of Engineer (M.Engg) in Electrical and Computer Engineering</strong> (Concentration in Applied Artificial Intelligence), University of Ottawa, Ottawa, Ontario (Expected Graduation: April 2026)
-          </li>
-          <li>
-            <strong>Master of Technology (M.Tech) in Electronics and Communication Engineering</strong>, First Division with Honors, Deenbandhu Chhotu Ram University of Science and Technology, India
-          </li>
-          <li>
-            <strong>Bachelor of Technology (B.Tech) in Electronics and Communication Engineering</strong>, First Division, Maharshi Dayanand University, India
-          </li>
+          <li>Increased student interest in physics through engaging lesson plans and hands-on experiments.</li>
+          <li>Proctored school exams, ensuring integrity and compliance with school examination protocols.</li>
         </ul>
       </div>
-    </section>
-    
-    <!-- Publications Section -->
-    <section id="publications">
-      <div class="content-card">
-        <h2>Published Research</h2>
-        <ol>
-          <li>
-            <strong>Sahil Khokhar and Deepak Kedia</strong>, “Integrating YOLOv8 and CSPBottleneck based CNN for enhanced license plate character recognition”, <em>Journal of Real-Time Image Processing</em>, vol. 21, no. 5, p. 168, Sep. 2024. 
-            <a href="http://dx.doi.org/10.1007/s11554-024-01537-2" target="_blank">View Publication</a>
-          </li>
-          <li>
-            <strong>Sahil Khokhar and Deepak Kedia</strong>, “Improving license plate detection with YOLO-LPD algorithm”, <em>International Journal of Computational Vision and Robotics</em>. 
-            <a href="http://dx.doi.org/10.1504/IJCVR.2024.10066190" target="_blank">View Publication</a>
-          </li>
-          <li>
-            <strong>Sahil Khokhar and Deepak Kedia</strong>, “Enhanced licence plate detection using YOLO framework in challenging environments”, <em>International Journal of Computational Vision and Robotics</em>. 
-            <a href="http://dx.doi.org/10.1504/IJCVR.2024.10062468" target="_blank">View Publication</a>
-          </li>
-          <li>
-            <strong>Sahil Khokhar and Pawan Kumar Dahiya</strong>, “Character Recognition for ALPR Systems: A New Perspective”, <em>Innovations in Electronics and Communication Engineering</em>, pp. 479–485, April 2020.
-            <a href="https://doi.org/10.1007/978-981-15-3172-9_46" target="_blank">View Publication</a>
-          </li>
-          <li>
-            <strong>Sahil Khokhar, Deepak Kedia, and Pawan Kumar Dahiya</strong>, “License Plate Detection Techniques: Conventional Methods to Deep Learning”, <em>ICT with Intelligent Applications. Smart Innovation</em>, Oct. 2022.
-            <a href="https://doi.org/10.1007/978-981-19-3571-8_66" target="_blank">View Publication</a>
-          </li>
-        </ol>
-      </div>
-    </section>
-    
-    <!-- Projects Section -->
-    <section id="projects">
-      <div class="content-card">
-        <h2>Academic Projects</h2>
-        <h3>Sentiment Analysis from Audio Samples</h3>
-        <ul>
-          <li>Used Git for version control and team collaboration.</li>
-          <li>Developed a pipeline to analyze audio samples for sentiment classification, focusing on features like pitch, tone, amplitude, and spectrogram representations.</li>
-          <li>Converted audio signals into spectrograms and applied the Bag-of-Visual-Words technique for feature extraction.</li>
-          <li>Built machine learning models (Random Forest, SVM, KNN) achieving high accuracy for gender-specific sentiment classification.</li>
-          <li>Addressed fairness by developing gender-specific models, yielding better performance than a gender-agnostic model.</li>
-        </ul>
-        
-        <h3>Research Paper Classification Using NLP</h3>
-        <ul>
-          <li>Designed an NLP-based system to classify research papers into predefined categories based on their abstracts.</li>
-          <li>Implemented feature extraction techniques including Bag-of-Words, TF-IDF, n-gram vectorization, and BERT embeddings.</li>
-          <li>Developed classification models using algorithms such as Random Forest and BERT, achieving reliable test performance.</li>
-        </ul>
-        
-        <h3>SVM Based Character Recognition for ALPR Systems</h3>
-        <ul>
-          <li>Developed an ALPR system in Matlab using an SVM with an RBF kernel to recognize license plate characters.</li>
-          <li>Extracted an 85-dimensional feature set from segmented characters through advanced image processing techniques.</li>
-          <li>Enhanced skills in Matlab, machine learning, and image processing.</li>
-        </ul>
-        
-        <h3>Wireless Sensor Network to Monitor Agricultural Lands</h3>
-        <ul>
-          <li>Designed a wireless sensor network using Arduino along with temperature and humidity sensors to monitor agricultural lands.</li>
-          <li>Enabled remote monitoring of environmental conditions to optimize crop management.</li>
-        </ul>
-        
-        <h3>Separation of Silver and Silicon from Solar Panels using Electrostatic Separation</h3>
-        <ul>
-          <li>Utilized Jira to coordinate project tasks and maintain organization.</li>
-          <li>Developed an eco-friendly and energy-efficient electrostatic separation system to extract silver and silicon from discarded solar panels.</li>
-          <li>Built a voltage multiplier circuit capable of generating 2kV DC for the separation process.</li>
-        </ul>
-        
-        <h3>Autonomous Avoidance Detection Vehicle</h3>
-        <ul>
-          <li>Built an Arduino-based autonomous vehicle equipped with proximity sensors for real-time obstacle detection.</li>
-          <li>Implemented navigation algorithms to enable real-time path correction and obstacle avoidance.</li>
-        </ul>
-      </div>
-    </section>
-    
-    <!-- Volunteering Section -->
-    <section id="volunteering">
-      <div class="content-card">
-        <h2>Volunteering</h2>
-        <h3>Faculty of Engineering, uOttawa</h3>
-        <ul>
-          <li>Assisted in organizing and guiding prospective students and their families during the Engineering Open House.</li>
-          <li>Provided detailed information on engineering programs, research opportunities, and student resources.</li>
-        </ul>
-        <h3>Center for Entrepreneurship and Engineering Design (CEED), uOttawa</h3>
-        <ul>
-          <li>Supported students in hands-on prototyping and fabrication projects using makerspace tools (e.g., 3D printers, laser cutters, Arduino kits).</li>
-          <li>Promoted CEED programs and workshops, fostering participation in entrepreneurial and design-driven initiatives.</li>
-        </ul>
-      </div>
-    </section>
-    
-    <!-- Extra-Curricular Section -->
-    <section id="extracurricular">
-      <div class="content-card">
-        <h2>Extra-Curricular Activities</h2>
-        <ul>
-          <li>English Debate Society</li>
-          <li>Improv Club</li>
-          <li>Baja Off-Road Racing – Electrical Team</li>
-          <li>NanoBrew Team</li>
-        </ul>
-      </div>
-    </section>
-    
-    <!-- Contact Section -->
-    <section id="contact">
-      <div class="content-card">
-        <h2>Contact</h2>
-        <p>If you’d like to get in touch, please email me at <a href="mailto:khokhar.sahil0809@gmail.com">khokhar.sahil0809@gmail.com</a> or connect via 
-          <a href="https://github.com/salkhokhar" target="_blank">GitHub</a> and 
-          <a href="https://www.linkedin.com/in/salkhokhar/" target="_blank">LinkedIn</a>.
-        </p>
-      </div>
-    </section>
-  </main>
-  
-  <!-- Footer -->
-  <footer>
+
+    </div>
+  </section>
+
+  <!-- Education Section -->
+  <section id="education">
     <div class="container">
-      <p>&copy; 2025 Sahil Khokhar</p>
+      <h2>Education</h2>
+      <ul>
+        <li>
+          Master of Engineer (M.Engg) in Electrical and Computer Engineering 
+          (Concentration in Applied Artificial Intelligence), 
+          University of Ottawa, Ottawa, Ontario 
+          (Expected Graduation 04/26)
+        </li>
+        <li>
+          Master of Technology (M.Tech) in Electronics and Communication Engineering, 
+          First Division with Honors, Deenbandhu Chhotu Ram University of Science and Technology, India
+        </li>
+        <li>
+          Bachelor of Technology (B.Tech) in Electronics and Communication Engineering, 
+          First Division, Maharshi Dayanand University, India
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Published Research Section -->
+  <section id="publications">
+    <div class="container">
+      <h2>Published Research</h2>
+      <ol>
+        <li>
+          Sahil Khokhar and Deepak Kedia, 
+          “Integrating YOLOv8 and CSPBottleneck based CNN for enhanced license plate character recognition,” 
+          Journal of Real-Time Image Processing, vol. 21, no. 5, p. 168, Sep. 2024. 
+          <a href="https://doi.org/10.1007/s11554-024-01537-2" target="_blank">
+            https://doi.org/10.1007/s11554-024-01537-2
+          </a>
+        </li>
+        <li>
+          Sahil Khokhar and Deepak Kedia, 
+          “Improving license plate detection with YOLO-LPD algorithm,” 
+          International Journal of Computational Vision and Robotics. 
+          <a href="http://dx.doi.org/10.1504/IJCVR.2024.10066190" target="_blank">
+            http://dx.doi.org/10.1504/IJCVR.2024.10066190
+          </a>
+        </li>
+        <li>
+          Sahil Khokhar and Deepak Kedia, 
+          “Enhanced licence plate detection using YOLO framework in challenging environments,” 
+          International Journal of Computational Vision and Robotics. 
+          <a href="http://dx.doi.org/10.1504/IJCVR.2024.10062468" target="_blank">
+            http://dx.doi.org/10.1504/IJCVR.2024.10062468
+          </a>
+        </li>
+        <li>
+          Sahil Khokhar and Pawan Kumar Dahiya, 
+          “Character Recognition for ALPR Systems: A New Perspective,” 
+          Innovations in Electronics and Communication Engineering, pp. 479-485, April 2020. 
+          <a href="https://doi.org/10.1007/978-981-15-3172-9_46" target="_blank">
+            https://doi.org/10.1007/978-981-15-3172-9_46
+          </a>
+        </li>
+        <li>
+          Sahil Khokhar, Deepak Kedia, Pawan Kumar Dahiya, 
+          “License Plate Detection Techniques: Conventional Methods to Deep Learning,” 
+          ICT with Intelligent Applications. Smart Innovation, Oct 2022. 
+          <a href="https://doi.org/10.1007/978-981-19-3571-8_66" target="_blank">
+            https://doi.org/10.1007/978-981-19-3571-8_66
+          </a>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- Academic Projects Section -->
+  <section id="projects">
+    <div class="container">
+      <h2>Academic Projects</h2>
+
+      <h3>Sentiment Analysis from Audio Samples</h3>
+      <ul>
+        <li>Used Git for version control and collaboration with team members.</li>
+        <li>Developed a pipeline to analyze audio samples for sentiment classification, focusing on features like pitch, tone, amplitude, and spectrogram representations.</li>
+        <li>Converted audio signals into spectrograms and applied the Bag-of-Visual-Words technique for feature representation.</li>
+        <li>Built machine learning models (Random Forest, SVM, and KNN) achieving high accuracy for gender-specific sentiment classification.</li>
+        <li>Addressed fairness concerns by developing gender-specific models, outperforming a gender-agnostic model.</li>
+      </ul>
+
+      <h3>Research Paper Classification Using NLP</h3>
+      <ul>
+        <li>Designed an NLP-based system to classify research papers into predefined categories based on their abstracts.</li>
+        <li>Implemented techniques like BOW, TF-IDF, n-gram vectorization, and BERT embeddings for feature extraction.</li>
+        <li>Built a classification model using algorithms such as Random Forest and BERT, achieving reliable performance on a test dataset.</li>
+      </ul>
+
+      <h3>SVM Based Character Recognition for ALPR Systems</h3>
+      <ul>
+        <li>Developed an ALPR system in MATLAB that leveraged an SVM with an RBF kernel to recognize license plate characters.</li>
+        <li>Extracted an 85-dimensional feature set from segmented characters through advanced image processing and feature engineering.</li>
+        <li>Enhanced proficiency in MATLAB, machine learning, and image processing.</li>
+      </ul>
+
+      <h3>Wireless Sensor Network to Monitor Agricultural Lands</h3>
+      <ul>
+        <li>Designed a wireless sensor network to monitor agricultural lands using Arduino and temperature/humidity sensors.</li>
+        <li>Enabled remote monitoring of environmental conditions to optimize crop management.</li>
+      </ul>
+
+      <h3>Separation of Silver and Silicon from Solar Panels using Electrostatic Separation</h3>
+      <ul>
+        <li>Used Jira to keep track of the project and maintain coordination.</li>
+        <li>Developed an eco-friendly and energy-efficient electrostatic separation system to extract silver and silicon from discarded solar panels.</li>
+        <li>Built a voltage multiplier circuit capable of generating 2kV DC for the separation process.</li>
+      </ul>
+
+      <h3>Autonomous Avoidance Detection Vehicle</h3>
+      <ul>
+        <li>Built an Arduino-based autonomous vehicle equipped with proximity sensors to detect and avoid obstacles.</li>
+        <li>Implemented navigation algorithms for real-time path correction.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Volunteering Section -->
+  <section id="volunteering">
+    <div class="container">
+      <h2>Volunteering</h2>
+      
+      <h3>Open House, Faculty of Engineering, uOttawa</h3>
+      <ul>
+        <li>Assisted in organizing and guiding prospective students and their families during the Faculty of Engineering Open House.</li>
+        <li>Provided information on engineering programs, research opportunities, and student resources.</li>
+      </ul>
+
+      <h3>Center for Entrepreneurship and Engineering Design (CEED), uOttawa</h3>
+      <ul>
+        <li>Supported students in hands-on prototyping and fabrication projects using CEED’s makerspace tools (3D printers, laser cutters, Arduino kits, etc.).</li>
+        <li>Promoted CEED programs and workshops, encouraging participation in entrepreneurial and design-driven opportunities.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Extra-Curricular Section -->
+  <section id="extra-curricular">
+    <div class="container">
+      <h2>Extra-Curricular Activities</h2>
+      <ul>
+        <li>English Debate Society</li>
+        <li>Improv Club</li>
+        <li>Baja Off-Road Racing – Electrical Team</li>
+        <li>NanoBrew Team</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="main-footer">
+    <div class="container">
+      <p>&copy; 2025. All rights reserved.</p>
     </div>
   </footer>
-  
-  <!-- JavaScript for Mobile Menu -->
-  <script>
-    const hamburger = document.getElementById('hamburger');
-    const siteNav = document.getElementById('siteNav');
-    hamburger.addEventListener('click', () => {
-      siteNav.classList.toggle('active');
-    });
-  </script>
+
 </body>
 </html>
