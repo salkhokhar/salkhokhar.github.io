@@ -1,88 +1,182 @@
-/* Global Styles */
+/* Reset & Base Styles */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
 body {
   margin: 0;
   font-family: 'Roboto', sans-serif;
   background: #f4f7f6;
   color: #333;
-  scroll-behavior: smooth; /* Enables smooth scrolling */
-}
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
+  scroll-behavior: smooth;
 }
 
-/* Header Styles */
-.site-header {
-  background: #fff;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+/* Global Link Styles */
+a {
+  text-decoration: underline;
+  color: #0077cc;
+  transition: color 0.3s;
+}
+a:hover {
+  color: #005fa3;
+}
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Header */
+header {
   position: fixed;
-  width: 100%;
   top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(255,255,255,0.95);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
   z-index: 1000;
+  backdrop-filter: blur(5px);
 }
-.site-header .container {
+.header-inner {
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  padding: 15px 0;
+  align-items: center;
+  padding: 15px 20px;
 }
-.header-branding {
+.logo {
   display: flex;
   align-items: center;
-  gap: 15px;
+  gap: 10px;
 }
-.profile-pic {
+.logo img {
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  border: 2px solid #0077cc;
   object-fit: cover;
+  border: 2px solid #0077cc;
 }
-.site-nav ul {
-  list-style: none;
+.logo h1 {
+  font-size: 24px;
+  color: #0077cc;
+  margin: 0;
+}
+nav ul {
   display: flex;
   gap: 20px;
+  list-style: none;
   margin: 0;
   padding: 0;
 }
-.site-nav a {
-  color: #0077cc;
-  text-decoration: none;
+nav li {
   font-weight: 500;
-  transition: color 0.3s;
 }
-.site-nav a:hover {
-  color: #005fa3;
+nav a {
+  color: #0077cc;
+}
+/* Mobile Navigation */
+.hamburger {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+}
+@media (max-width: 767px) {
+  .hamburger {
+    display: block;
+  }
+  nav ul {
+    flex-direction: column;
+    background: #fff;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    display: none;
+  }
+  nav.active ul {
+    display: flex;
+  }
 }
 
-/* Main content styles */
-.site-content {
-  padding-top: 100px; /* Account for fixed header */
-  padding-bottom: 50px;
+/* Sections */
+section {
+  position: relative;
+  padding: 120px 20px 60px;
 }
-.content-section {
+/* Parallax-like Backgrounds */
+section::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0.2;
+  z-index: -1;
+}
+/* Background images per section */
+#about::before { background-image: url('asset/about-bg.jpg'); }
+#experience::before { background-image: url('asset/experience-bg.jpg'); }
+#education::before { background-image: url('asset/education-bg.jpg'); }
+#publications::before { background-image: url('asset/publications-bg.jpg'); }
+#projects::before { background-image: url('asset/projects-bg.jpg'); }
+#volunteering::before { background-image: url('asset/volunteering-bg.jpg'); }
+#extracurricular::before { background-image: url('asset/extracurricular-bg.jpg'); }
+#contact::before { background-image: url('asset/contact-bg.jpg'); }
+
+/* Content Card */
+.content-card {
   background: #fff;
-  margin-bottom: 30px;
   padding: 30px;
   border-radius: 8px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  max-width: 800px;
+  margin: 0 auto;
+  animation: fadeIn 0.6s ease-out;
+}
+.content-card h2 {
+  margin-bottom: 15px;
+  color: #0077cc;
+}
+.content-card h3 {
+  margin-top: 20px;
+  color: #005fa3;
+}
+.content-card p, .content-card li {
+  margin-bottom: 15px;
+  line-height: 1.6;
+}
+.content-card ul, .content-card ol {
+  padding-left: 20px;
 }
 
-/* Footer Styles */
-.site-footer {
+/* Footer */
+footer {
+  background: #fff;
   text-align: center;
   padding: 20px 0;
-  background: #fff;
-  color: #666;
   font-size: 14px;
+  color: #666;
 }
 
-/* Example of simple fade in animation for sections */
-.content-section {
-  animation: fadeIn 0.5s ease-in;
+/* Space for Fixed Header */
+main {
+  padding-top: 100px;
 }
+
+/* Animation */
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 767px) {
+  .header-inner {
+    flex-direction: column;
+    gap: 10px;
+  }
+  nav ul {
+    width: 200px;
+  }
+  section {
+    padding: 100px 10px 40px;
+  }
 }
