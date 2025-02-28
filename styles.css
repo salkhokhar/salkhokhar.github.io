@@ -139,11 +139,11 @@ main {
 }
 
 /* Experience, Education, Projects, Publications, etc. */
-.experience-item, .education-item, .project-item, .publication-item {
+.experience-item, .education-item, .project-item, .publication-item, .volunteering-item {
   margin-bottom: 20px;
 }
 
-.experience-item h3, .education-item h3, .project-item h3, .publication-item h3 {
+.experience-item h3, .education-item h3, .project-item h3, .publication-item h3, .volunteering-item h3 {
   margin-bottom: 5px;
   color: #007BFF;
 }
