@@ -3,239 +3,450 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Sahil Khokhar - Portfolio</title>
+  <title>Sahil Khokhar — AI Engineer</title>
+  <meta name="description" content="Sahil Khokhar builds production LLM systems in Toronto: agentic orchestration with human-in-the-loop control, MCP tool platforms with role-based access, and privacy-preserving AI infrastructure. PhD in computer vision with five peer-reviewed papers.">
+  <meta property="og:title" content="Sahil Khokhar — AI Engineer">
+  <meta property="og:description" content="Production LLM systems, agentic workflows and privacy-preserving AI. PhD in computer vision.">
+  <meta property="og:image" content="https://salkhokhar.github.io/asset/headshot.jpg">
+  <meta name="theme-color" content="#0b0f17">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <!-- Fixed Header -->
-  <header>
-    <div class="header-content">
-      <div class="logo">
-        <h1>Sahil Khokhar</h1>
-      </div>
-      <nav>
-        <ul>
-          <li><a href="#about">About</a></li>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#experience">Experience</a></li>
-          <li><a href="#education">Education</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#publications">Publications</a></li>
-          <li><a href="#volunteering">Volunteering</a></li>
-          <li><a href="#activities">Activities</a></li>
-        </ul>
-      </nav>
+<a class="skip" href="#main">Skip to content</a>
+
+<nav class="nav">
+  <div class="wrap">
+    <a class="logo" href="#top" aria-label="Sahil Khokhar, home">
+      <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
+        <circle cx="6" cy="14" r="3" fill="var(--teal)"/><circle cx="22" cy="6" r="3" fill="var(--amber)"/><circle cx="22" cy="22" r="3" fill="var(--amber)"/>
+        <path d="M8.5 12.5 19.5 7.5M8.5 15.5 19.5 20.5" stroke="var(--line-strong)" stroke-width="1.5"/>
+      </svg>
+      <span>Sahil</span>
+    </a>
+    <ul class="links">
+      <li><a href="#work">Work</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#journey">Journey</a></li>
+      <li><a href="#papers">Papers</a></li>
+    </ul>
+    <a class="btn btn-primary btn-sm" href="#contact">Get in touch</a>
+  </div>
+</nav>
+
+<main id="main">
+
+<!-- ============ HERO ============ -->
+<header id="top" class="hero wrap">
+  <div class="hero-copy">
+    <span class="pill"><span class="pulse"></span>Building production LLM systems at CGI · Toronto</span>
+    <h1>Sahil Khokhar<br><span class="grad">AI Engineer</span></h1>
+    <p class="lede">I turn LLMs into systems a company can actually run: agents with tool calling and human approval, MCP tool platforms with role-based access, and a privacy gateway that keeps personal data out of the model.</p>
+    <div class="cta">
+      <a class="btn btn-primary" href="#work">See my work</a>
+      <a class="btn btn-ghost" href="asset/resume.pdf" download="Sahil-Khokhar-Resume.pdf">Download resume</a>
     </div>
-  </header>
+    <p class="hero-foot">PhD in computer vision · 5 peer-reviewed papers on YOLO-based detection</p>
+  </div>
 
-  <!-- Main Content -->
-  <main>
-    <!-- About Section -->
-    <section id="about" class="section about">
-      <div class="about-container">
-        <img src="asset/headshot.png" alt="Sahil Khokhar" class="profile-pic">
-        <div class="about-text">
-          <h2>About Me</h2>
-          <p>I'm Sahil Khokhar (Sal), a Software Developer with a diverse background in building robust software solutions. I specialize in full-stack development, data analysis, data science and artificial intelligence. Passionate about solving complex problems, I leverage my expertise in scripting, coding, and machine learning to create innovative applications.</p>
-          <div class="contact-info">
-            <a href="mailto:khokhar.sahil0809@gmail.com">khokhar.sahil0809@gmail.com</a> |
-            <a href="https://github.com/salkhokhar" target="_blank">GitHub</a> |
-            <a href="https://linkedin.com/in/salkhokhar" target="_blank">LinkedIn</a>
-          </div>
-          <a href="asset/resume.pdf" class="btn" download>Download Resume</a>
-        </div>
+  <!-- Live demo panel -->
+  <div class="demo" aria-label="Interactive demos of the kind of systems I build">
+    <div class="demo-head">
+      <span class="demo-title"><span class="dot"></span>sk.gateway</span>
+      <div class="tabs" role="tablist" aria-label="Demo">
+        <button role="tab" aria-selected="true" aria-controls="demo-pii" id="tab-pii" class="on">PII gateway</button>
+        <button role="tab" aria-selected="false" aria-controls="demo-agent" id="tab-agent">Agent run</button>
+        <button role="tab" aria-selected="false" aria-controls="demo-mcp" id="tab-mcp">MCP access</button>
       </div>
+    </div>
+
+    <section id="demo-pii" role="tabpanel" aria-labelledby="tab-pii" class="panel on">
+      <label class="lbl" for="pii-in">Type anything with an email, phone, card or name</label>
+      <textarea id="pii-in" rows="3" spellcheck="false">Hi, I'm Priya Sharma. Please reset the account for priya.sharma@example.com and call me on (416) 555-0142. Card on file ends 4111 1111 1111 1111.</textarea>
+      <div class="lbl-row">
+        <span class="lbl">What the model sees</span>
+        <button class="mini" id="pii-toggle" aria-pressed="false">Re-identify</button>
+      </div>
+      <div id="pii-out" class="out" aria-live="polite"></div>
+      <div class="stat-row"><span id="pii-count">0 entities masked</span><span>demo runs in your browser · nothing leaves this page</span></div>
     </section>
 
-    <!-- Skills Section -->
-    <section id="skills" class="section skills">
-      <h2>Skills</h2>
-      <div class="skills-grid">
-         <div class="skill-card">PM: Atlassian Jira</div>
-         <div class="skill-card">MS Suite: Excel, Word, PowerPoint</div>
-         <div class="skill-card">IDE: VS Code, JupyterLab</div>
-         <div class="skill-card">SCM: Git</div>
-         <div class="skill-card">Programming: Python, C, SQL, HTML, MATLAB</div>
-         <div class="skill-card">Machine Learning: Computer Vision, Data Science, Audio & Image Classification, Object Detection, NLP</div>
-         <div class="skill-card">Python Libraries: PyTorch, Tensorflow, Matplotlib, Sklearn, Pandas, Numpy</div>
-         <div class="skill-card">Languages: English (Proficient)</div>
-      </div>
+    <section id="demo-agent" role="tabpanel" aria-labelledby="tab-agent" class="panel" hidden>
+      <div class="lbl-row"><span class="lbl">Service request #4821</span><button class="mini" id="agent-replay">Replay</button></div>
+      <ol id="trace" class="trace" aria-live="polite"></ol>
     </section>
 
-    <!-- Experience Section -->
-    <section id="experience" class="section experience">
-      <h2>Experience</h2>
-      <div class="experience-item">
-         <h3>Research Scholar, Guru Jambheshwar University of Science and Technology, India</h3>
-         <span>Nov. 2018 - Aug. 2024</span>
-         <ul>
-           <li>Executed innovative AI research by designing experiments and advancing Computer Vision models.</li>
-           <li>Managed data preprocessing and analysis using Python for model development.</li>
-           <li>Developed machine learning models with TensorFlow and PyTorch, refining performance metrics.</li>
-           <li>Implemented various versions of YOLO for real-time object detection.</li>
-           <li>Published and presented findings in journals and conferences.</li>
-         </ul>
+    <section id="demo-mcp" role="tabpanel" aria-labelledby="tab-mcp" class="panel" hidden>
+      <div class="lbl-row"><span class="lbl">Tools exposed to a client, by role</span></div>
+      <div class="roles" role="group" aria-label="Role">
+        <button data-role="analyst" class="on" aria-pressed="true">Analyst</button>
+        <button data-role="manager" aria-pressed="false">Manager</button>
+        <button data-role="admin" aria-pressed="false">Admin</button>
       </div>
-      <div class="experience-item">
-         <h3>Assistant Professor, Delhi Global Institute of Technology, India</h3>
-         <span>Jan. 2022 - Aug. 2024</span>
-         <ul>
-           <li>Enhanced student engagement in digital electronics, Python, and microprocessor courses.</li>
-           <li>Monitored student progress and provided personalized feedback.</li>
-         </ul>
-      </div>
-      <div class="experience-item">
-         <h3>PGT Physics, Sanskaram Public School, India</h3>
-         <span>Nov. 2020 - Nov. 2021</span>
-         <ul>
-           <li>Increased student interest through engaging lesson plans and hands-on experiments.</li>
-           <li>Ensured exam integrity as a proctor.</li>
-         </ul>
-      </div>
+      <ul id="tools" class="tools"></ul>
+      <div class="stat-row"><span id="tools-count"></span><span>role-based access on an MCP server</span></div>
     </section>
+  </div>
+</header>
 
-    <!-- Education Section -->
-    <section id="education" class="section education">
-      <h2>Education</h2>
-      <div class="education-item">
-         <h3>Master of Engineer (M.Engg) in Electrical and Computer Engineering (Applied AI)</h3>
-         <p>University of Ottawa, Ottawa, Ontario (Expected Graduation 04/26)</p>
-      </div>
-      <div class="education-item">
-         <h3>Master of Technology (M.Tech) in Electronics and Communication Engineering</h3>
-         <p>Deenbandhu Chhotu Ram University of Science and Technology, India</p>
-      </div>
-      <div class="education-item">
-         <h3>Bachelor of Technology (B.Tech) in Electronics and Communication Engineering</h3>
-         <p>Maharshi Dayanand University, India</p>
-      </div>
-    </section>
+<!-- ============ ORG STRIP ============ -->
+<section class="strip" aria-label="Organisations">
+  <div class="wrap strip-grid">
+    <div><span class="mono-tile">C</span><div><strong>CGI</strong><span>AI Developer</span></div></div>
+    <div><span class="mono-tile">FN</span><div><strong>First National Financial</strong><span>Software Engineer, co-op</span></div></div>
+    <div><span class="mono-tile">uO</span><div><strong>University of Ottawa</strong><span>M.Eng, Applied AI</span></div></div>
+    <div><span class="mono-tile">GJ</span><div><strong>GJUS&amp;T</strong><span>PhD, computer vision</span></div></div>
+  </div>
+</section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="section projects">
-      <h2>Academic Projects</h2>
-      <div class="project-item">
-         <h3>Sentiment Analysis from Audio Samples</h3>
-         <ul>
-           <li>Used Git for version control and collaborating with team members.</li>
-           <li>Developed a pipeline to analyze audio samples for sentiment classification, focusing on features like pitch, tone, amplitude and spectrogram representations.</li>
-           <li>Converted audio signals into spectrograms and applied the Bag-of-Visual-Words technique for feature representation.</li>
-           <li>Built machine learning models (Random Forest, SVM and KNN) achieving high accuracy for gender-specific sentiment classification.</li>
-           <li>Addressed fairness concerns by developing gender-specific models, achieving better accuracy than gender-agnostic model.</li>
-         </ul>
-      </div>
-      <div class="project-item">
-         <h3>Research Paper Classification Using NLP</h3>
-         <ul>
-           <li>Designed an NLP-based system to classify research papers into predefined categories based on their abstracts.</li>
-           <li>Implemented techniques like BOW, TF-IDF and n-gram vectorization and BERT embeddings for feature extraction.</li>
-           <li>Built a classification model using machine learning algorithms such as Random Forest, BERT etc., achieving reliable performance on a test dataset.</li>
-         </ul>
-      </div>
-      <div class="project-item">
-         <h3>SVM Based Character Recognition for ALPR Systems</h3>
-         <ul>
-           <li>Developed an ALPR system in Matlab that leveraged an SVM with an RBF kernel to recognize license plate characters.</li>
-           <li>Extracted an 85-dimensional feature set from segmented characters through advanced image processing and feature engineering.</li>
-           <li>Enhanced my proficiency in Matlab, machine learning, and image processing.</li>
-         </ul>
-      </div>
-      <div class="project-item">
-         <h3>Wireless Sensor Network for Agricultural Lands</h3>
-         <ul>
-           <li>Designed a wireless sensor network to monitor agricultural lands using Arduino and temperature and humidity sensors.</li>
-           <li>Enabled remote monitoring of environmental conditions to optimize crop management. </li>
-         </ul>
-      </div>
-      <div class="project-item">
-         <h3>Separation of Silver and Silicon from Solar Panels</h3>
-         <ul>
-           <li>Used Jira to keep track of the project and keep everyone coordinated.</li>
-           <li>Developed an eco-friendly and energy-efficient electrostatic separation system to extract silver and silicon from discarded solar panels.</li>
-           <li>Built a voltage multiplier circuit capable of generating 2kV DC for the separation process. </li>
-         </ul>
-      </div>
-      <div class="project-item">
-         <h3>Autonomous Avoidance Detection Vehicle</h3>
-         <ul>
-           <li>Built an Arduino-based autonomous vehicle equipped with proximity sensors to detect and avoid obstacles.</li>
-           <li>Implemented navigation algorithms for real-time path correction. </li>
-         </ul>
-      </div>
-    </section>
+<!-- ============ HOW I BUILD ============ -->
+<section class="wrap block" id="how">
+  <h2>How I build</h2>
+  <div class="steps">
+    <article class="step">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="8" cy="16" r="4"/><circle cx="24" cy="8" r="4"/><circle cx="24" cy="24" r="4"/><path d="M11.5 14.5 20.5 9.5M11.5 17.5 20.5 22.5"/></svg>
+      <h3>Orchestrate</h3><p>Agents that call tools, log every step, and stop for a human before anything irreversible.</p>
+    </article>
+    <article class="step">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><rect x="7" y="14" width="18" height="12" rx="3"/><path d="M11 14v-4a5 5 0 0 1 10 0v4"/><circle cx="16" cy="20" r="1.5"/></svg>
+      <h3>Secure</h3><p>PII masked before the model, re-identified after. Role-based access on every tool.</p>
+    </article>
+    <article class="step">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M6 24 14 8l4 8 4-4 4 12"/><path d="M4 26h24"/></svg>
+      <h3>Ship</h3><p>FastAPI services, schema-validated outputs, Docker and CI/CD. Boring on purpose.</p>
+    </article>
+    <article class="step">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><rect x="5" y="7" width="22" height="16" rx="3"/><rect x="10" y="12" width="7" height="6" rx="1"/><path d="M5 27h22"/></svg>
+      <h3>Research</h3><p>Seven years of computer vision research. Five papers on detection and recognition.</p>
+    </article>
+  </div>
+</section>
 
-    <!-- Publications Section -->
-    <section id="publications" class="section publications">
-      <h2>Published Research</h2>
-      <div class="publication-item">
-         <h3>Integrating YOLOv8 and CSPBottleneck based CNN for enhanced license plate character recognition</h3>
-         <p>Sahil Khokhar and Deepak Kedia, Journal of Real-Time Image Processing, vol. 21, no. 5, p. 168, Sep. 2024. <a href="https://doi.org/10.1007/s11554-02401537-2" target="_blank">DOI</a></p>
-      </div>
-      <div class="publication-item">
-         <h3>Improving license plate detection with YOLO-LPD algorithm</h3>
-         <p>Sahil Khokhar and Deepak Kedia, International Journal of Computational Vision and Robotics. <a href="http://dx.doi.org/10.1504/IJCVR.2024.10066190" target="_blank">DOI</a></p>
-      </div>
-      <div class="publication-item">
-         <h3>Enhanced licence plate detection using YOLO framework in challenging environments</h3>
-         <p>Sahil Khokhar and Deepak Kedia, International Journal of Computational Vision and Robotics. <a href="http://dx.doi.org/10.1504/IJCVR.2024.10062468" target="_blank">DOI</a></p>
-      </div>
-      <div class="publication-item">
-         <h3>Character Recognition for ALPR Systems: A New Perspective</h3>
-         <p>Sahil Khokhar and Pawan Kumar Dahiya, Innovations in Electronics and Communication Engineering, pp. 479-485, April 2020. <a href="https://doi.org/10.1007/978-981-15-3172-9_46" target="_blank">DOI</a></p>
-      </div>
-      <div class="publication-item">
-         <h3>License Plate Detection Techniques: Conventional Methods to Deep Learning</h3>
-         <p>Sahil Khokhar, Deepak Kedia, Pawan Kumar Dahiya, ICT with Intelligent Applications. Smart Innovation, Oct 2022. <a href="https://doi.org/10.1007/978-981-19-3571-8_66" target="_blank">DOI</a></p>
-      </div>
-    </section>
+<!-- ============ PROJECTS ============ -->
+<section class="wrap block" id="work">
+  <div class="block-head">
+    <h2>Work</h2>
+    <div class="filters" role="group" aria-label="Filter projects">
+      <button data-f="all" class="on" aria-pressed="true">All</button>
+      <button data-f="llm" aria-pressed="false">LLM &amp; agents</button>
+      <button data-f="cv" aria-pressed="false">Computer vision</button>
+      <button data-f="ml" aria-pressed="false">ML</button>
+      <button data-f="hw" aria-pressed="false">Hardware</button>
+    </div>
+  </div>
+  <p class="hint">Tap a card to see the problem, what I built, and the result.</p>
+  <div id="cards" class="cards"></div>
+</section>
 
-    <!-- Volunteering Section -->
-    <section id="volunteering" class="section volunteering">
-      <h2>Volunteering</h2>
-      <div class="project-item">
-         <h3>Volunteered for open house in the Faculty of Engineering, uOttawa.</h3>
-         <ul>
-           <li>Assisted in organizing and guiding prospective students and their families during the Faculty of Engineering Open House.</li>
-           <li>Provided information on engineering programs, research opportunities, and student resources to help prospective students make informed decisions.</li>
-         </ul>
-      </div>
-      <div class="project-item">
-         <h3>Volunteered with Center for Entrepreneurship and Engineering Design (CEED), uOttawa.</h3>
-         <ul>
-           <li>Supported students in hands-on prototyping and fabrication projects using CEED’s makerspace tools (e.g., 3D printers, laser cutters, and Arduino kits). </li>
-           <li>Provided information on engineering programs, research opportunities, and student resources to help prospective students make informed decisions.</li>
-         </ul>
-      </div>
-    </section>
+<!-- ============ SKILLS MATRIX ============ -->
+<section class="wrap block" id="skills">
+  <div class="block-head"><h2>Skills by role</h2><p class="sub">Where I've used each tool.</p></div>
+  <div class="matrix-wrap">
+    <table class="matrix" id="matrix">
+      <thead><tr><th scope="col"><span class="sr">Skill</span></th><th scope="col">CGI</th><th scope="col">First National</th><th scope="col">PhD research</th><th scope="col">uOttawa</th></tr></thead>
+      <tbody></tbody>
+    </table>
+    <div class="legend"><span><i class="core"></i>Core</span><span><i class="used"></i>Used</span><span><i class="none"></i>Not in this role</span></div>
+  </div>
+</section>
 
-    <!-- Extra-Curricular Activities Section -->
-    <section id="activities" class="section activities">
-      <h2>Extra-Curricular Activities</h2>
-      <ul>
-         <li> VP Board Games CLub</li> 
-         <li>English Debate Society</li>
-         <li>Improv Club</li>
-         <li>Baja Off-Road Racing – Electrical Team</li>
-         <li>NanoBrew Team</li>
-      </ul>
-    </section>
-  </main>
+<!-- ============ JOURNEY ============ -->
+<section class="wrap block" id="journey">
+  <div class="block-head"><h2>Journey</h2><p class="sub">2018 to today.</p></div>
+  <div class="gantt" id="gantt"></div>
+</section>
 
-  <!-- Footer -->
-  <footer>
-    <p>&copy; 2025 Sahil Khokhar</p>
-  </footer>
+<!-- ============ PAPERS ============ -->
+<section class="wrap block" id="papers">
+  <div class="block-head"><h2>Papers</h2><p class="sub">Peer-reviewed, all on license plate detection and recognition.</p></div>
+  <ol class="pubs">
+    <li><span class="yr">2024</span><div><a href="https://doi.org/10.1007/s11554-024-01537-2" target="_blank" rel="noopener">Integrating YOLOv8 and CSPBottleneck based CNN for enhanced license plate character recognition</a><p>S. Khokhar, D. Kedia · <em>Journal of Real-Time Image Processing</em>, 21(5):168</p></div></li>
+    <li><span class="yr">2024</span><div><a href="https://doi.org/10.1504/IJCVR.2024.10066190" target="_blank" rel="noopener">Improving license plate detection with YOLO-LPD algorithm</a><p>S. Khokhar, D. Kedia · <em>International Journal of Computational Vision and Robotics</em></p></div></li>
+    <li><span class="yr">2024</span><div><a href="https://doi.org/10.1504/IJCVR.2024.10062468" target="_blank" rel="noopener">Enhanced licence plate detection using YOLO framework in challenging environments</a><p>S. Khokhar, D. Kedia · <em>International Journal of Computational Vision and Robotics</em></p></div></li>
+    <li><span class="yr">2022</span><div><a href="https://doi.org/10.1007/978-981-19-3571-8_66" target="_blank" rel="noopener">License plate detection techniques: conventional methods to deep learning</a><p>S. Khokhar, D. Kedia, P. K. Dahiya · <em>ICT with Intelligent Applications (Smart Innovation)</em></p></div></li>
+    <li><span class="yr">2020</span><div><a href="https://doi.org/10.1007/978-981-15-3172-9_46" target="_blank" rel="noopener">Character recognition for ALPR systems: a new perspective</a><p>S. Khokhar, P. K. Dahiya · <em>Innovations in Electronics and Communication Engineering</em>, pp. 479–485</p></div></li>
+  </ol>
+</section>
 
-  <!-- Optional JavaScript for Smooth Scrolling -->
-  <script>
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-          behavior: 'smooth'
-        });
-      });
+<!-- ============ NUMBERS ============ -->
+<section class="wrap block" id="numbers">
+  <h2>By the numbers</h2>
+  <div class="nums">
+    <div class="num"><strong><span data-count="5">0</span></strong><span>Peer-reviewed papers</span></div>
+    <div class="num"><strong><span data-count="7">0</span>+</strong><span>Years in applied AI</span></div>
+    <div class="num"><strong><span data-count="4">0</span></strong><span>Production AI systems shipped at CGI</span></div>
+    <div class="num"><strong><span data-count="4">0</span></strong><span>Degrees, B.Tech to PhD</span></div>
+  </div>
+</section>
+
+<!-- ============ EDUCATION ============ -->
+<section class="wrap block" id="education">
+  <h2>Education</h2>
+  <ul class="edu">
+    <li><strong>PhD, Electronics &amp; Communication Engineering</strong><span>Guru Jambheshwar University of Science and Technology, India</span><em>Thesis: Advanced Character Detection and Recognition Techniques using Soft Computing Algorithms</em></li>
+    <li><strong>M.Eng, Electrical and Computer Engineering (Applied AI)</strong><span>University of Ottawa, Canada</span></li>
+    <li><strong>M.Tech, Electronics &amp; Communication Engineering</strong><span>Deenbandhu Chhotu Ram University of Science and Technology, India</span><em>Thesis: SVM-Based Character Recognition for ALPR Systems</em></li>
+    <li><strong>B.Tech, Electronics &amp; Communication Engineering, First Division</strong><span>Maharshi Dayanand University, India</span></li>
+  </ul>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="contact" id="contact">
+  <div class="wrap">
+    <img src="asset/headshot.jpg" alt="Sahil Khokhar" width="96" height="96" class="avatar">
+    <h2>Let's build something that ships.</h2>
+    <p>Open to conversations about agentic systems, LLM infrastructure and applied computer vision.</p>
+    <div class="cta center">
+      <a class="btn btn-primary" href="mailto:khokhar.sahil0809@gmail.com">Email me</a>
+      <button class="btn btn-ghost" id="copy-email" data-email="khokhar.sahil0809@gmail.com">Copy email</button>
+      <a class="btn btn-ghost" href="https://www.linkedin.com/in/salkhokhar/" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="btn btn-ghost" href="https://github.com/salkhokhar" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer"><div class="wrap">Sahil Khokhar · Toronto, ON · © 2026</div></footer>
+
+<script>
+/* ---------- palette constants for the SVG art ---------- */
+const A = '#f5b63f', T = '#3dd6c4', R = '#f07a6a', C = '#e7ecf2', L = 'rgba(231,236,242,.14)', D = 'rgba(11,15,23,.55)';
+const grid = `<g stroke="${L}">${[30,60,90,120].map(y => `<path d="M20 ${y}H220"/>`).join('')}</g>`;
+
+/* ---------- projects ---------- */
+const projects = [
+  { cat: 'llm', tag: 'LLM & agents', title: 'MCP tool platform with role-based access',
+    art: `<svg viewBox="0 0 240 150" fill="none" stroke-width="2.5"><circle cx="120" cy="75" r="22" stroke="${A}" fill="rgba(245,182,63,.12)"/><path d="M112 75h16M120 67v16" stroke="${A}"/><g stroke="${L}"><path d="M98 75H60M142 75h38M106 58 76 36M134 58l30-22M106 92 76 114M134 92l30 22"/></g><g stroke="${T}"><rect x="30" y="62" width="30" height="26" rx="7"/><rect x="180" y="62" width="30" height="26" rx="7"/><rect x="52" y="14" width="30" height="26" rx="7"/><rect x="158" y="14" width="30" height="26" rx="7"/></g><g stroke="${R}" opacity=".8"><rect x="52" y="110" width="30" height="26" rx="7"/><rect x="158" y="110" width="30" height="26" rx="7"/><path d="M60 118l14 10M74 118l-14 10M166 118l14 10M180 118l-14 10"/></g></svg>`,
+    p: 'Clients needed analytics and chart tools exposed to LLM agents without everyone seeing everything.',
+    b: 'An MCP server platform where each tool is gated by role, so an analyst, a manager and an admin get different tool sets.',
+    o: 'One governed entry point for AI tooling across client teams.', stack: ['MCP', 'Python', 'RBAC', 'FastAPI'] },
+  { cat: 'llm', tag: 'LLM & agents', title: 'AI privacy gateway for secure LLM use',
+    art: `<svg viewBox="0 0 240 150" fill="none"><rect x="18" y="18" width="204" height="114" rx="12" fill="${D}" stroke="${L}"/><g fill="${C}" opacity=".5"><rect x="34" y="40" width="70" height="6" rx="3"/><rect x="34" y="58" width="44" height="6" rx="3"/><rect x="34" y="76" width="92" height="6" rx="3"/><rect x="34" y="94" width="58" height="6" rx="3"/><rect x="34" y="112" width="80" height="6" rx="3"/></g><g fill="${R}"><rect x="110" y="38" width="48" height="10" rx="5"/><rect x="84" y="56" width="60" height="10" rx="5"/><rect x="132" y="74" width="40" height="10" rx="5"/><rect x="98" y="92" width="72" height="10" rx="5"/></g><g stroke="${T}" stroke-width="2.5"><rect x="176" y="48" width="30" height="24" rx="5"/><path d="M182 48v-6a9 9 0 0 1 18 0v6"/></g></svg>`,
+    p: 'Teams wanted to use LLMs on documents full of personal data.',
+    b: 'A gateway that detects and masks personal data before it reaches the model and restores it afterwards, with secure handling of the originals and document ingestion from PDFs and scanned images.',
+    o: 'LLMs usable on sensitive content with the identifiers never leaving the gateway.', stack: ['PII detection', 'De-identification', 'Document ingestion', 'FastAPI'] },
+  { cat: 'llm', tag: 'LLM & agents', title: 'Unstructured requests to validated tickets',
+    art: `<svg viewBox="0 0 240 150" fill="none" stroke-width="2.5"><g stroke="${L}"><rect x="20" y="30" width="60" height="90" rx="6"/><path d="M30 48h40M30 60h28M30 72h40M30 84h34M30 96h22"/></g><path d="M86 75h44" stroke="${A}" stroke-dasharray="4 5"/><circle cx="110" cy="75" r="14" stroke="${A}" fill="rgba(245,182,63,.12)"/><path d="M104 75l4 4 8-8" stroke="${A}"/><rect x="140" y="34" width="80" height="82" rx="8" stroke="${T}" fill="rgba(61,214,196,.08)"/><g fill="${T}" font-family="JetBrains Mono, monospace" font-size="9"><text x="150" y="52">{</text><text x="156" y="66">"type":</text><text x="156" y="80">"priority":</text><text x="156" y="94">"owner":</text><text x="150" y="108">}</text></g></svg>`,
+    p: 'Service requests arrived as free-text emails and had to be triaged by hand.',
+    b: 'FastAPI services on Azure OpenAI that extract schema-validated tickets, detect duplicates, and deploy through CI/CD.',
+    o: 'Consistent, structured tickets with duplicates caught before they reach the queue.', stack: ['Azure OpenAI', 'FastAPI', 'Pydantic', 'CI/CD'] },
+  { cat: 'llm', tag: 'LLM & agents', title: 'Agentic triage with human approval',
+    art: `<svg viewBox="0 0 240 150" fill="none" stroke-width="2.5" stroke-linecap="round"><g stroke="${L}"><path d="M44 75h30M106 75h30M168 75h24"/></g><circle cx="30" cy="75" r="14" stroke="${T}"/><path d="M24 75h12M30 69v12" stroke="${T}"/><rect x="74" y="58" width="32" height="34" rx="8" stroke="${T}"/><path d="M82 70h16M82 78h10" stroke="${T}"/><circle cx="152" cy="75" r="16" stroke="${A}" fill="rgba(245,182,63,.14)"/><circle cx="152" cy="70" r="5" stroke="${A}"/><path d="M143 86c2-6 16-6 18 0" stroke="${A}"/><rect x="192" y="58" width="32" height="34" rx="8" stroke="${T}" fill="rgba(61,214,196,.1)"/><path d="M200 75l6 6 10-12" stroke="${T}"/><circle r="4" fill="${A}"><animateMotion dur="3s" repeatCount="indefinite" path="M44 75h30M106 75h30"/></circle></svg>`,
+    p: 'Inbound requests needed automated action, but nobody wanted an agent acting unsupervised.',
+    b: 'An Azure OpenAI agent that classifies requests, triggers actions, and pauses for human approval before anything irreversible, with full run logging.',
+    o: 'Automation with an audit trail and a person in the loop where it matters.', stack: ['Azure OpenAI', 'Tool calling', 'HITL', 'Python'] },
+  { cat: 'llm', tag: 'LLM & agents', title: 'AI underwriting assistant',
+    art: `<svg viewBox="0 0 240 150" fill="none" stroke-width="2.5"><rect x="20" y="24" width="90" height="102" rx="8" stroke="${L}"/><g stroke="${L}"><path d="M32 44h66M32 58h50M32 72h66M32 86h40"/></g><g stroke="${T}"><path d="M32 104l5 5 10-10"/><path d="M52 104l5 5 10-10"/></g><path d="M118 60c0-8 8-14 18-14h56c10 0 18 6 18 14v22c0 8-8 14-18 14h-30l-16 12v-12h-10c-10 0-18-6-18-14z" stroke="${A}" fill="rgba(245,182,63,.1)"/><g fill="${A}"><rect x="132" y="58" width="60" height="5" rx="2.5"/><rect x="132" y="70" width="42" height="5" rx="2.5" opacity=".6"/></g></svg>`,
+    p: 'Underwriters pulled data from several enterprise systems by hand before every decision.',
+    b: 'An OpenAI-based assistant with LLM extraction into validated schemas, automated retrieval and fault-tolerant processing, packaged in Docker.',
+    o: 'Faster, more consistent underwriting decisions. Co-op at First National Financial.', stack: ['OpenAI API', 'Azure OpenAI', 'Docker', 'Python'] },
+  { cat: 'cv', tag: 'Computer vision', title: 'YOLO-based license plate recognition',
+    art: `<svg viewBox="0 0 240 150" fill="none" stroke-width="2.5"><rect x="20" y="20" width="200" height="110" rx="10" fill="${D}" stroke="${L}"/><path d="M40 118c20-30 40-44 80-44s60 14 80 44" stroke="${L}"/><rect x="78" y="78" width="84" height="30" rx="4" stroke="${T}"/><g stroke="${T}" opacity=".7"><path d="M78 72v-8h8M162 72v-8h-8M78 114v8h8M162 114v8h-8"/></g><g fill="${C}" font-family="JetBrains Mono, monospace" font-size="13" font-weight="700"><text x="86" y="99">ABC 1234</text></g><rect x="78" y="64" width="34" height="12" rx="3" fill="${T}"/><text x="82" y="73" font-size="8" fill="#06201c" font-family="JetBrains Mono, monospace">plate .97</text><rect x="36" y="32" width="56" height="12" rx="3" fill="${A}"/><text x="40" y="41" font-size="8" fill="#1a1200" font-family="JetBrains Mono, monospace">YOLOv8 · CSP</text></svg>`,
+    p: 'Plate detection and character recognition broke down in low light, rain and odd angles.',
+    b: 'Custom YOLO architectures (YOLO-LPD) plus a CSPBottleneck CNN for character recognition, trained and benchmarked in PyTorch and TensorFlow.',
+    o: 'Five peer-reviewed papers, including the Journal of Real-Time Image Processing.', stack: ['YOLO', 'PyTorch', 'TensorFlow', 'OpenCV'] },
+  { cat: 'ml', tag: 'ML', title: 'Sentiment from audio samples',
+    art: `<svg viewBox="0 0 240 150" fill="none"><path d="M20 75c10-30 18-30 28 0s18 30 28 0 18-30 28 0 18 30 28 0 18-30 28 0 18 30 28 0" stroke="${T}" stroke-width="2.5"/><g fill="${A}"><rect x="30" y="112" width="8" height="18" rx="2"/><rect x="44" y="104" width="8" height="26" rx="2"/><rect x="58" y="118" width="8" height="12" rx="2"/><rect x="72" y="100" width="8" height="30" rx="2"/><rect x="86" y="108" width="8" height="22" rx="2"/><rect x="100" y="96" width="8" height="34" rx="2"/><rect x="114" y="114" width="8" height="16" rx="2"/><rect x="128" y="104" width="8" height="26" rx="2"/><rect x="142" y="110" width="8" height="20" rx="2"/><rect x="156" y="98" width="8" height="32" rx="2"/><rect x="170" y="116" width="8" height="14" rx="2"/><rect x="184" y="106" width="8" height="24" rx="2"/><rect x="198" y="112" width="8" height="18" rx="2"/></g><rect x="150" y="22" width="64" height="20" rx="10" fill="rgba(61,214,196,.15)" stroke="${T}" stroke-width="2"/><text x="162" y="36" font-size="10" fill="${T}" font-family="JetBrains Mono, monospace">positive</text></svg>`,
+    p: 'Tone, pitch and amplitude carry sentiment that text transcripts lose.',
+    b: 'Spectrogram features with a Bag-of-Visual-Words representation, then Random Forest, SVM and KNN classifiers, with separate gender-specific models.',
+    o: 'Gender-specific models beat the gender-agnostic baseline, a fairness finding as much as an accuracy one.', stack: ['scikit-learn', 'Audio', 'Python'] },
+  { cat: 'ml', tag: 'ML', title: 'Research paper classifier',
+    art: `<svg viewBox="0 0 240 150" fill="none" stroke-width="2.5"><g stroke="${L}"><rect x="22" y="30" width="40" height="52" rx="5"/><rect x="30" y="38" width="40" height="52" rx="5" fill="${D}"/><rect x="38" y="46" width="40" height="52" rx="5" fill="${D}"/></g><path d="M86 72h30" stroke="${A}" stroke-dasharray="4 5"/><rect x="118" y="54" width="36" height="36" rx="9" stroke="${A}" fill="rgba(245,182,63,.12)"/><text x="126" y="77" font-size="11" fill="${A}" font-family="JetBrains Mono, monospace" font-weight="700">BERT</text><g stroke="${L}"><path d="M156 72h22M178 72c10 0 10-30 20-30M178 72h20M178 72c10 0 10 30 20 30"/></g><g stroke="${T}"><rect x="200" y="30" width="24" height="22" rx="6" fill="rgba(61,214,196,.12)"/><rect x="200" y="61" width="24" height="22" rx="6"/><rect x="200" y="92" width="24" height="22" rx="6"/></g></svg>`,
+    p: 'Abstracts needed sorting into research categories at scale.',
+    b: 'Compared Bag-of-Words, TF-IDF and n-gram vectorization against BERT embeddings, with Random Forest and fine-tuned BERT classifiers.',
+    o: 'A reliable classifier on a held-out test set and a clean comparison of classic versus transformer features.', stack: ['NLP', 'BERT', 'TF-IDF'] },
+  { cat: 'ml', tag: 'ML', title: 'SVM character recognition for ALPR',
+    art: `<svg viewBox="0 0 240 150" fill="none" stroke-width="2.5">${grid}<path d="M30 120 190 30" stroke="${A}" stroke-dasharray="6 5"/><g fill="${T}"><circle cx="60" cy="50" r="5"/><circle cx="80" cy="42" r="5"/><circle cx="70" cy="70" r="5"/><circle cx="100" cy="56" r="5"/><circle cx="50" cy="84" r="5"/></g><g fill="${R}"><circle cx="150" cy="100" r="5"/><circle cx="170" cy="84" r="5"/><circle cx="130" cy="118" r="5"/><circle cx="185" cy="110" r="5"/><circle cx="160" cy="122" r="5"/></g><text x="150" y="40" font-size="10" fill="${C}" font-family="JetBrains Mono, monospace" opacity=".7">85-dim features</text></svg>`,
+    p: 'Plate characters needed recognising before deep learning was practical on the hardware available.',
+    b: 'An 85-dimensional feature set from segmented characters feeding an RBF-kernel SVM, built in MATLAB. M.Tech thesis.',
+    o: 'A working ALPR pipeline and the first of five publications.', stack: ['MATLAB', 'SVM', 'Image processing'] },
+  { cat: 'hw', tag: 'Hardware', title: 'Silver and silicon recovery from solar panels',
+    art: `<svg viewBox="0 0 240 150" fill="none" stroke-width="2.5"><g stroke="${L}"><rect x="24" y="30" width="60" height="90" rx="6"/><path d="M24 60h60M24 90h60M54 30v90"/></g><path d="M92 75h30" stroke="${A}"/><path d="M110 60l8 15-8 15" stroke="${A}"/><rect x="130" y="40" width="40" height="70" rx="8" stroke="${A}" fill="rgba(245,182,63,.1)"/><text x="138" y="80" font-size="11" fill="${A}" font-family="JetBrains Mono, monospace">2 kV</text><g stroke="${L}"><path d="M170 60h20M170 90h20"/></g><circle cx="204" cy="60" r="10" stroke="${C}" fill="rgba(231,236,242,.15)"/><circle cx="204" cy="90" r="10" stroke="${T}" fill="rgba(61,214,196,.15)"/></svg>`,
+    p: 'Discarded panels bury recoverable silver and silicon in landfill.',
+    b: 'An electrostatic separation rig driven by a custom voltage-multiplier circuit producing 2 kV DC.',
+    o: 'An energy-efficient, chemical-free recovery process.', stack: ['Electronics', 'Power circuits'] },
+  { cat: 'hw', tag: 'Hardware', title: 'Field sensor network and autonomous rover',
+    art: `<svg viewBox="0 0 240 150" fill="none" stroke-width="2.5"><g stroke="${T}"><circle cx="50" cy="50" r="8"/><circle cx="110" cy="38" r="8"/><circle cx="80" cy="96" r="8"/></g><g stroke="${L}" stroke-dasharray="3 4"><path d="M58 50l44-10M56 56l18 32M110 46l-24 42"/></g><rect x="150" y="70" width="60" height="34" rx="8" stroke="${A}" fill="rgba(245,182,63,.1)"/><g fill="${A}"><circle cx="160" cy="110" r="6"/><circle cx="200" cy="110" r="6"/></g><path d="M180 70v-14" stroke="${A}"/><path d="M168 56a14 14 0 0 1 24 0" stroke="${A}"/><path d="M172 60a8 8 0 0 1 16 0" stroke="${A}" opacity=".6"/></svg>`,
+    p: 'Two Arduino builds: remote monitoring of farmland, and a vehicle that has to not hit things.',
+    b: 'A wireless temperature and humidity sensor network, and a rover with proximity sensors and real-time path correction.',
+    o: 'Remote crop-condition monitoring and reliable obstacle avoidance.', stack: ['Arduino', 'Sensors', 'C'] },
+];
+
+const cardsEl = document.getElementById('cards');
+cardsEl.innerHTML = projects.map((p, i) => `
+  <article class="card" data-cat="${p.cat}">
+    <div class="face front">
+      <div class="art">${p.art}</div>
+      <span class="badge ${p.cat}">${p.tag}</span>
+      <h3>${p.title}</h3>
+      <button class="flip" aria-label="Show details for ${p.title}" aria-expanded="false">↻</button>
+    </div>
+    <div class="face back">
+      <dl><dt>Problem</dt><dd>${p.p}</dd><dt>Built</dt><dd>${p.b}</dd><dt>Result</dt><dd>${p.o}</dd></dl>
+      <ul class="chips">${p.stack.map(s => `<li>${s}</li>`).join('')}</ul>
+      <button class="flip" aria-label="Back to summary" aria-expanded="true">↻</button>
+    </div>
+  </article>`).join('');
+
+cardsEl.addEventListener('click', e => {
+  const card = e.target.closest('.card'); if (!card) return;
+  const on = card.classList.toggle('flipped');
+  card.querySelectorAll('.flip').forEach(b => b.setAttribute('aria-expanded', String(on)));
+});
+
+document.querySelectorAll('.filters button').forEach(b => b.addEventListener('click', () => {
+  document.querySelectorAll('.filters button').forEach(x => { x.classList.remove('on'); x.setAttribute('aria-pressed', 'false'); });
+  b.classList.add('on'); b.setAttribute('aria-pressed', 'true');
+  const f = b.dataset.f;
+  document.querySelectorAll('.card').forEach(c => { c.hidden = f !== 'all' && c.dataset.cat !== f; });
+}));
+
+/* ---------- skills matrix (2 = core, 1 = used, 0 = not in this role) ---------- */
+const skills = [
+  ['Azure OpenAI / OpenAI API', 2, 2, 0, 0],
+  ['Agentic orchestration & MCP', 2, 1, 0, 0],
+  ['Human-in-the-loop design', 2, 1, 0, 0],
+  ['PII masking & re-identification', 2, 0, 0, 0],
+  ['FastAPI & REST', 2, 1, 0, 0],
+  ['Docker & CI/CD', 2, 2, 0, 0],
+  ['SQL (PostgreSQL, SQL Server)', 2, 2, 0, 1],
+  ['Python', 2, 2, 2, 2],
+  ['C# / .NET', 1, 1, 0, 0],
+  ['PyTorch / TensorFlow', 0, 0, 2, 2],
+  ['YOLO & OpenCV', 0, 0, 2, 1],
+  ['NLP & transformers', 1, 1, 0, 2],
+];
+document.querySelector('#matrix tbody').innerHTML = skills.map(([n, ...v]) =>
+  `<tr><th scope="row">${n}</th>${v.map(x => `<td><span class="cell ${['none','used','core'][x]}"><span class="sr">${['Not in this role','Used','Core'][x]}</span></span></td>`).join('')}</tr>`).join('');
+
+/* ---------- journey gantt: [label, sub, start, end, colour] in decimal years ---------- */
+const Y0 = 2018, Y1 = 2026.8;
+const journey = [
+  ['PhD research, computer vision', 'GJUS&T, India', 2018.85, 2024.6, 'teal'],
+  ['M.Eng, Applied AI', 'University of Ottawa', 2024.7, 2026.3, 'amber'],
+  ['Software Engineer, co-op', 'First National Financial', 2025.35, 2025.65, 'amber'],
+  ['AI Developer', 'CGI, Toronto', 2025.7, Y1, 'teal'],
+];
+const papers = [2020.3, 2022.8, 2024.2, 2024.5, 2024.7];
+const pct = y => ((y - Y0) / (Y1 - Y0) * 100).toFixed(2) + '%';
+document.getElementById('gantt').innerHTML = `
+  <div class="g-years">${[2018,2019,2020,2021,2022,2023,2024,2025].map(y => `<span style="left:${pct(y)}">${y}</span>`).join('')}<span class="today" style="left:${pct(Y1)}">Today</span></div>
+  ${journey.map(([l, s, a, b, c]) => `<div class="g-row"><div class="g-label"><strong>${l}</strong><span>${s}</span></div><div class="g-track"><span class="g-bar ${c}" style="left:${pct(a)};width:calc(${pct(b)} - ${pct(a)})"></span></div></div>`).join('')}
+  <div class="g-row"><div class="g-label"><strong>Papers published</strong><span>5 peer-reviewed</span></div><div class="g-track">${papers.map(y => `<span class="g-dot" style="left:${pct(y)}"></span>`).join('')}</div></div>`;
+
+/* ---------- demo tabs ---------- */
+document.querySelectorAll('.tabs [role=tab]').forEach(t => t.addEventListener('click', () => {
+  document.querySelectorAll('.tabs [role=tab]').forEach(x => { x.classList.remove('on'); x.setAttribute('aria-selected', 'false'); });
+  document.querySelectorAll('.panel').forEach(p => { p.hidden = true; p.classList.remove('on'); });
+  t.classList.add('on'); t.setAttribute('aria-selected', 'true');
+  const p = document.getElementById(t.getAttribute('aria-controls')); p.hidden = false; p.classList.add('on');
+  if (t.id === 'tab-agent') runTrace();
+}));
+
+/* ---------- PII gateway demo ----------
+   ponytail: simple pattern rules plus a capitalised-pair heuristic for names. A browser-only sketch of the idea;
+   nothing typed here leaves the page. */
+const STOP = /^(Hi|Hello|Hey|Dear|Please|Thanks|Thank|The|My|Our|Your|Card|Account|Regards|Best|Call)$/;
+const rules = [
+  ['CARD', /\b(?:\d[ -]?){13,16}\b/g],
+  ['EMAIL', /[\w.+-]+@[\w-]+\.[\w.-]+/g],
+  ['PHONE', /(?:\+?\d{1,2}[\s.-]?)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}\b/g],
+  ['PERSON', /\b([A-Z][a-z]+)\s+([A-Z][a-z]+)\b/g],
+];
+function mask(text) {
+  const vault = []; let out = text;
+  for (const [type, re] of rules) {
+    out = out.replace(re, (m, a) => {
+      if (type === 'PERSON' && STOP.test(a)) return m;
+      vault.push([type, m]);
+      return `\u0000${vault.length - 1}\u0000`;
     });
-  </script>
+  }
+  return { out, vault };
+}
+const esc = s => s.replace(/[&<>]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;' }[c]));
+const piiIn = document.getElementById('pii-in'), piiOut = document.getElementById('pii-out'), piiToggle = document.getElementById('pii-toggle');
+let reveal = false;
+function renderPII() {
+  const { out, vault } = mask(piiIn.value);
+  const counts = {};
+  piiOut.innerHTML = esc(out).replace(/\u0000(\d+)\u0000/g, (_, i) => {
+    const [type, orig] = vault[i]; counts[type] = (counts[type] || 0) + 1;
+    return `<mark class="pii-${type.toLowerCase()}">${reveal ? esc(orig) : `&lt;${type}_${counts[type]}&gt;`}</mark>`;
+  });
+  document.getElementById('pii-count').textContent = `${vault.length} ${vault.length === 1 ? 'entity' : 'entities'} ${reveal ? 'restored' : 'masked'}`;
+}
+piiIn.addEventListener('input', renderPII);
+piiToggle.addEventListener('click', () => { reveal = !reveal; piiToggle.setAttribute('aria-pressed', String(reveal)); piiToggle.textContent = reveal ? 'Mask again' : 'Re-identify'; renderPII(); });
+renderPII();
+
+/* ---------- agent trace demo ---------- */
+const steps = [
+  ['in', 'Received: "Need access to the claims dashboard for the new analyst"', 0],
+  ['ok', 'Classified as access-request · confidence 0.94', 700],
+  ['tool', 'tool_call lookup_user(name="new analyst", team="claims")', 1400],
+  ['tool', 'tool_call check_policy(resource="claims-dashboard", role="analyst")', 2100],
+  ['wait', 'Awaiting human approval', 2800],
+  ['ok', 'Approved by reviewer · 14s', 4600],
+  ['tool', 'tool_call grant_access(user=1042, resource="claims-dashboard")', 5200],
+  ['done', 'Done · run logged with full trace', 5900],
+];
+let traceTimers = [];
+function runTrace() {
+  traceTimers.forEach(clearTimeout); traceTimers = [];
+  const ol = document.getElementById('trace'); ol.innerHTML = '';
+  const t0 = Date.now();
+  steps.forEach(([k, txt, at]) => traceTimers.push(setTimeout(() => {
+    ol.querySelector('.wait')?.classList.replace('wait', 'ok');
+    const li = document.createElement('li'); li.className = k;
+    li.innerHTML = `<span class="t">+${((Date.now() - t0) / 1000).toFixed(1)}s</span><span>${esc(txt)}</span>`;
+    ol.appendChild(li);
+  }, at)));
+}
+document.getElementById('agent-replay').addEventListener('click', runTrace);
+
+/* ---------- MCP role access demo ---------- */
+const tools = [
+  ['view_kpis', 'analyst manager admin'], ['build_chart', 'analyst manager admin'], ['run_sql', 'analyst admin'],
+  ['export_report', 'manager admin'], ['approve_request', 'manager admin'], ['manage_users', 'admin'], ['audit_log', 'admin'],
+];
+function renderTools(role) {
+  let n = 0;
+  document.getElementById('tools').innerHTML = tools.map(([name, roles]) => {
+    const ok = roles.includes(role); if (ok) n++;
+    return `<li class="${ok ? 'ok' : 'locked'}"><span class="fn">${name}()</span><span class="st">${ok ? 'exposed' : 'hidden'}</span></li>`;
+  }).join('');
+  document.getElementById('tools-count').textContent = `${n} of ${tools.length} tools visible to ${role}`;
+}
+document.querySelectorAll('.roles button').forEach(b => b.addEventListener('click', () => {
+  document.querySelectorAll('.roles button').forEach(x => { x.classList.remove('on'); x.setAttribute('aria-pressed', 'false'); });
+  b.classList.add('on'); b.setAttribute('aria-pressed', 'true'); renderTools(b.dataset.role);
+}));
+renderTools('analyst');
+
+/* ---------- copy email ---------- */
+document.getElementById('copy-email').addEventListener('click', async e => {
+  const b = e.currentTarget;
+  try { await navigator.clipboard.writeText(b.dataset.email); b.textContent = 'Copied'; }
+  catch { b.textContent = b.dataset.email; }
+  setTimeout(() => { b.textContent = 'Copy email'; }, 1800);
+});
+
+/* ---------- counters + reveal on scroll ---------- */
+const motion = !matchMedia('(prefers-reduced-motion: reduce)').matches;
+const io = new IntersectionObserver(entries => entries.forEach(en => {
+  if (!en.isIntersecting) return;
+  en.target.classList.add('in'); io.unobserve(en.target);
+  en.target.querySelectorAll('[data-count]').forEach(el => {
+    const end = +el.dataset.count; if (!motion) { el.textContent = end; return; }
+    const t0 = performance.now();
+    (function tick(t) { const p = Math.min(1, (t - t0) / 900); el.textContent = Math.round(end * (1 - Math.pow(1 - p, 3))); if (p < 1) requestAnimationFrame(tick); })(t0);
+  });
+}), { threshold: 0.15 });
+document.querySelectorAll('.block, .strip, .contact').forEach(s => { if (motion) s.classList.add('reveal'); io.observe(s); });
+</script>
 </body>
 </html>
